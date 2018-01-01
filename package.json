@@ -12,7 +12,8 @@
     "build": "export NODE_ENV=production && npm run clean && webpack -p --progress --colors --config webpack.config.prod.js",
     "clean": "rimraf dist",
     "deploy:gh-pages": "npm run build && . ./deploy_gh_pages.sh",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint-check": "eslint --print-config .eslintrc | eslint-config-prettier-check"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.3",

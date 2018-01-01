@@ -1,10 +1,12 @@
 {
   "extends": [
     "airbnb",
-    "prettier"
+    "prettier",
+    "prettier/react"
   ],
   "env": {
-    "browser": true
+    "browser": true,
+    "es6": true
   },
   "globals": {
     "L": false,
