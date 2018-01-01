@@ -4,6 +4,9 @@ import { AppContainer } from 'react-hot-loader';
 
 // tell webpack to use our scss
 import './scss/main.scss';
+// web audio api monkeypatch
+import './utils/monkeypatch';
+// parent component
 import App from './components/App';
 
 const renderApp = Component => {
