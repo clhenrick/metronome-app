@@ -1,5 +1,7 @@
 # metronome-app
-A mobile friendly metronome web app
+A mobile friendly metronome web app.
+
+Code borrowed from @scottwhudson's [metronome](https://github.com/cwilso/metronome) which borrowed code from @cwilson's [metronome](https://github.com/cwilso/metronome).
 
 ## Install
 
