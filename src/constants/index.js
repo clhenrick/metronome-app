@@ -1,3 +1,4 @@
+export const TOGGLE_PLAY_PAUSE = 'TOGGLE_PLAY_PAUSE';
 export const SET_TEMPO = 'SET_TEMPO';
 export const INCREMENT_TEMPO = 'INCREMENT_TEMPO';
 export const DECREMENT_TEMPO = 'DECREMENT_TEMPO';

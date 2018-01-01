@@ -1,6 +1,7 @@
 // Redux reducer: updates state based on action types & data
 
 import {
+  TOGGLE_PLAY_PAUSE,
   SET_TEMPO,
   SET_METER,
   SET_MASTER_VOLUME,
@@ -12,7 +13,8 @@ import {
 } from '../constants';
 
 export const defaultState = {
-  tempo: 120,
+  isPlaying: false,
+  tempo: 120.0,
   meter: 4,
   masterVolume: 0.5,
   accentVolume: 1,
@@ -24,6 +26,12 @@ export const defaultState = {
 
 export default function(state = defaultState, action) {
   switch (action.type) {
+    case TOGGLE_PLAY_PAUSE:
+      return {
+        ...state,
+        isPlaying: !state.isPlaying,
+      };
+
     case SET_TEMPO:
       return {
         ...state,

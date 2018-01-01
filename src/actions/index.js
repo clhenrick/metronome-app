@@ -1,6 +1,7 @@
 // Redux action creators
 
 import {
+  TOGGLE_PLAY_PAUSE,
   SET_TEMPO,
   SET_METER,
   SET_MASTER_VOLUME,
@@ -10,6 +11,10 @@ import {
   SET_SIXTEENTH_VOLUME,
   SET_TRIPLET_VOLUME,
 } from '../constants';
+
+export const togglePlayPause = () => ({
+  type: TOGGLE_PLAY_PAUSE,
+});
 
 export const setTempo = tempo => ({
   type: SET_TEMPO,
