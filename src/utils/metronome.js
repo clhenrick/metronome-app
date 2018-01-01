@@ -3,7 +3,7 @@
 // ported to ES6
 
 let audioContext = null;
-let isPlaying = false; // Are we currently playing?
+// let isPlaying = false; // Are we currently playing?
 // let startTime; // The start time of the entire sequence.
 let currentTwelveletNote; // What note is currently last scheduled?
 let tempo = 120.0; // tempo (in beats per minute)
@@ -133,9 +133,7 @@ function scheduler() {
   }
 }
 
-export function play() {
-  isPlaying = !isPlaying;
-
+export function play(isPlaying) {
   if (isPlaying) {
     currentTwelveletNote = 0;
     nextNoteTime = audioContext.currentTime;
