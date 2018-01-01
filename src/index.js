@@ -6,8 +6,8 @@ import { AppContainer } from 'react-hot-loader';
 import './scss/main.scss';
 // web audio api monkeypatch
 import './utils/monkeypatch';
-// parent component
-import App from './components/App';
+// parent component wrapped in Redux
+import ReduxEntry from './ReduxEntry';
 
 const renderApp = Component => {
   render(
@@ -18,8 +18,8 @@ const renderApp = Component => {
   );
 };
 
-renderApp(App);
+renderApp(ReduxEntry);
 
 if (module.hot) {
-  module.hot.accept('./components/App', () => renderApp(App));
+  module.hot.accept('./ReduxEntry', () => renderApp(ReduxEntry));
 }
