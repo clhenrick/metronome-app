@@ -1,18 +1,16 @@
 /* eslint-disable */
 // webpack configuration common to both production and development
-const metadata = require("./package.json")
+const metadata = require('./package.json');
 const path = require('path');
 const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const extractSass = new ExtractTextPlugin({
   filename: '[name].[hash].css',
   disable: process.env.NODE_ENV === 'development',
 });
-
-console.log(process.env.NODE_ENV);
 
 module.exports = {
   // where the compiled code is placed
@@ -24,7 +22,7 @@ module.exports = {
 
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.geojson'],
-    modules: [path.resolve(__dirname, "src"), "node_modules"]
+    modules: [path.resolve(__dirname, 'src'), 'node_modules'],
   },
 
   // what to do with different types of modules, e.g. sass, js, jsx, json, geojson
@@ -42,48 +40,49 @@ module.exports = {
             loader: 'eslint-loader',
             options: {
               failOnError: false, // temporary
-            }
+            },
           },
         ],
       },
       // Use Sass and transpile to CSS
       {
         test: /\.(css|scss)$/,
-        use: process.env.NODE_ENV !== 'production'
-          ? [
-              {
-                loader: 'style-loader', // creates style nodes from JS strings
-              },
-              {
-                loader: 'css-loader', // translates CSS into CommonJS
-              },
-              {
-                loader: 'postcss-loader', // postcss loader so we can use autoprefixer
-                options: {
-                  config: {
-                    path: 'postcss.config.js',
+        use:
+          process.env.NODE_ENV !== 'production'
+            ? [
+                {
+                  loader: 'style-loader', // creates style nodes from JS strings
+                },
+                {
+                  loader: 'css-loader', // translates CSS into CommonJS
+                },
+                {
+                  loader: 'postcss-loader', // postcss loader so we can use autoprefixer
+                  options: {
+                    config: {
+                      path: 'postcss.config.js',
+                    },
                   },
                 },
-              },
-              {
-                loader: 'sass-loader', // compiles Sass to CSS
-              },
-            ]
-          : extractSass.extract({
-            use: [
-              {
-                loader: 'css-loader',
-              },
-              {
-                loader: 'sass-loader',
-              },
-            ],
-            fallback: [
-              {
-                loader: 'style-loader',
-              },
-            ],
-          }),
+                {
+                  loader: 'sass-loader', // compiles Sass to CSS
+                },
+              ]
+            : extractSass.extract({
+                use: [
+                  {
+                    loader: 'css-loader',
+                  },
+                  {
+                    loader: 'sass-loader',
+                  },
+                ],
+                fallback: [
+                  {
+                    loader: 'style-loader',
+                  },
+                ],
+              }),
       },
       // allows for using ES6 (dynamic) imports for JSON and GeoJSON files, no async loading!
       {
@@ -145,4 +144,4 @@ module.exports = {
     // desktop notification when webpack updates
     new WebpackNotifierPlugin({ alwaysNotify: true }),
   ],
-}
+};

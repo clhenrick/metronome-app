@@ -1,3 +1,4 @@
+/* eslint-disable */
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
@@ -20,7 +21,8 @@ module.exports = merge.smart(common, {
     port: process.env.PORT || DEFAULT_PORT, // what port on localhost content will be served from
     hot: true, // for hot-module-replacement,
     historyApiFallback: true,
-    stats: { // build stats to display while webpack is running: https://webpack.js.org/configuration/stats/
+    stats: {
+      // build stats to display while webpack is running: https://webpack.js.org/configuration/stats/
       assets: false,
       colors: true,
       children: false,
