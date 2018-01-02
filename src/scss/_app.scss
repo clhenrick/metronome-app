@@ -1,7 +1,7 @@
 .App {
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  width: calc(100vw - 50px);
+  height: calc(100vh - 50px);
   padding: 25px;
   background: papayawhip;
   color: steelblue;
