@@ -1,7 +1,9 @@
 @import '~normalize.css';
 @import '~skeleton-scss/scss/skeleton';
+@import '~react-rangeslider/lib/index.css';
 
 @import 'app';
 @import 'layout';
 @import 'play-pause-btn';
 @import 'tempo-display';
+@import 'tempo-slider';
