@@ -2,6 +2,8 @@
 // https://github.com/scottwhudson/metronome
 // ported to ES6
 
+import Worker from './worker';
+
 let audioContext = null;
 // let isPlaying = false; // Are we currently playing?
 // let startTime; // The start time of the entire sequence.
@@ -147,7 +149,7 @@ export function play(isPlaying) {
 
 export function init() {
   audioContext = new AudioContext();
-  timerWorker = new Worker('src/utils/worker.js');
+  timerWorker = new Worker();
 
   timerWorker.onmessage = e => {
     if (e.data === 'tick') {
