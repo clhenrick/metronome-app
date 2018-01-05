@@ -5,7 +5,7 @@ import { AppContainer } from 'react-hot-loader';
 // tell webpack to use our scss
 import './scss/main.scss';
 // web audio api monkeypatch
-import './utils/monkeypatch';
+// import './utils/monkeypatch';
 // parent component wrapped in Redux
 import ReduxEntry from './ReduxEntry';
 
