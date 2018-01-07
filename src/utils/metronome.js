@@ -97,6 +97,7 @@ function scheduleNote(beatNumber, time) {
 
   osc.connect(gainNode);
   gainNode.connect(audioContext.destination);
+  osc.type = 0;
 
   if (beatNumber % maxBeats() === 0) {
     if (accentVolume > 0.25) {
