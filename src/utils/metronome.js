@@ -137,6 +137,7 @@ function scheduler() {
 
 export function play(isPlaying) {
   if (isPlaying) {
+    alert(`audioContext.state: ${audioContext.state}`); // eslint-disable-line
     currentTwelveletNote = 0;
     nextNoteTime = audioContext.currentTime;
     timerWorker.postMessage('start');
