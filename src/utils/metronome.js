@@ -159,8 +159,9 @@ export function init() {
   try {
     if (typeof AudioContext !== 'undefined') {
       audioContext = new AudioContext();
-    } else if (typeof webkitAudioContext !== 'undefined') {
-      audioContext = new webkitAudioContext(); // eslint-disable-line
+      // }
+      // else if (typeof webkitAudioContext !== 'undefined') {
+      //   audioContext = new webkitAudioContext(); // eslint-disable-line
     } else {
       usingWebAudio = false;
     }
