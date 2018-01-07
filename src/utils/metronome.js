@@ -169,8 +169,12 @@ export function init() {
 
   // context state at this time is `undefined` in iOS8 Safari
   if (usingWebAudio && audioContext.state === 'suspended') {
+    alert('webaudio suspended'); // eslint-disable-line
+
     const resume = () => {
       audioContext.resume();
+
+      alert('webaudio resuming'); // eslint-disable-line
 
       setTimeout(() => {
         if (audioContext.state === 'running') {
