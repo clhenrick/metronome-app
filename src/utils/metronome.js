@@ -176,6 +176,7 @@ export function init() {
       audioContext.resume();
 
       alert('webaudio resuming'); // eslint-disable-line
+      play(true);
 
       setTimeout(() => {
         if (audioContext.state === 'running') {
