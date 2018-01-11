@@ -2,9 +2,9 @@
 // https://github.com/scottwhudson/metronome
 // ported to ES6
 
+import Worker from './worker';
+
 let audioContext = null;
-// let isPlaying = false; // Are we currently playing?
-// let startTime; // The start time of the entire sequence.
 let currentTwelveletNote; // What note is currently last scheduled?
 let tempo = 120.0; // tempo (in beats per minute)
 let meter = 4;
@@ -138,16 +138,43 @@ export function play(isPlaying) {
     currentTwelveletNote = 0;
     nextNoteTime = audioContext.currentTime;
     timerWorker.postMessage('start');
-    // document.getElementById('play-icon').innerHTML = 'pause';
   } else {
     timerWorker.postMessage('stop');
-    // document.getElementById('play-icon').innerHTML = 'play_arrow';
   }
 }
 
 export function init() {
-  audioContext = new AudioContext();
-  timerWorker = new Worker('src/utils/worker.js');
+  audioContext = null;
+  timerWorker = new Worker();
+
+  // hack so that AudioContext works on iOS
+  // code credit: https://gist.github.com/laziel/7aefabe99ee57b16081c
+  let usingWebAudio = true;
+
+  try {
+    if (typeof AudioContext !== 'undefined') {
+      audioContext = new AudioContext();
+    } else {
+      usingWebAudio = false;
+    }
+  } catch (e) {
+    usingWebAudio = false;
+  }
+
+  // context state at this time is `undefined` in iOS8 Safari
+  if (usingWebAudio && audioContext.state === 'suspended') {
+    const resume = () => {
+      audioContext.resume();
+
+      setTimeout(() => {
+        if (audioContext.state === 'running') {
+          document.body.removeEventListener('touchend', resume, false);
+        }
+      }, 0);
+    };
+
+    document.body.addEventListener('touchend', resume, false);
+  }
 
   timerWorker.onmessage = e => {
     if (e.data === 'tick') {

@@ -27,6 +27,28 @@ module.exports = {
   // what to do with different types of modules, e.g. sass, js, jsx, json, geojson
   module: {
     rules: [
+      // handles web-workers
+      {
+        test: /worker\.js$/,
+        use: [
+          {
+            loader: 'worker-loader',
+            options: {
+              name: 'worker.[hash].js',
+              inline: true,
+            },
+          },
+          {
+            loader: 'eslint-loader',
+            options: {
+              failOnError: false, // temporary
+            },
+          },
+          {
+            loader: 'babel-loader',
+          },
+        ],
+      },
       // Lint JS and transpile ES6 to ES5
       {
         test: /\.(js|jsx)$/,
