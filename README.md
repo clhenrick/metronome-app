@@ -1,5 +1,7 @@
 # metronome-app
-A mobile friendly metronome web app.
+A mobile friendly metronome web app built using the Web Audio API, React, Redux, and Web Workers.
+
+I originally started developing this so that I could have a metronome app with good UI/UX design available on my mobile device, but was unable to get the Web Audio API to work on mobile Safari with iOS11. As such this project is for now shelved :(
 
 Code borrowed from @scottwhudson's [metronome](https://github.com/cwilso/metronome) which borrowed code from @cwilson's [metronome](https://github.com/cwilso/metronome).
 
@@ -34,6 +36,7 @@ npm run deploy:gh-pages
 ```
 
 ## Resources
+Some links to articles and documentation relating to the Web Audio API.
 
 https://developer.mozilla.org/en-US/Apps/Fundamentals/Audio_and_video_delivery/Web_Audio_API_cross_browser
 
