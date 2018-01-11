@@ -5,8 +5,6 @@
 import Worker from './worker';
 
 let audioContext = null;
-// let isPlaying = false; // Are we currently playing?
-// let startTime; // The start time of the entire sequence.
 let currentTwelveletNote; // What note is currently last scheduled?
 let tempo = 120.0; // tempo (in beats per minute)
 let meter = 4;
@@ -97,7 +95,6 @@ function scheduleNote(beatNumber, time) {
 
   osc.connect(gainNode);
   gainNode.connect(audioContext.destination);
-  osc.type = 0;
 
   if (beatNumber % maxBeats() === 0) {
     if (accentVolume > 0.25) {
@@ -138,14 +135,11 @@ function scheduler() {
 
 export function play(isPlaying) {
   if (isPlaying) {
-    alert(`audioContext.state: ${audioContext.state}`); // eslint-disable-line
     currentTwelveletNote = 0;
     nextNoteTime = audioContext.currentTime;
     timerWorker.postMessage('start');
-    // document.getElementById('play-icon').innerHTML = 'pause';
   } else {
     timerWorker.postMessage('stop');
-    // document.getElementById('play-icon').innerHTML = 'play_arrow';
   }
 }
 
@@ -160,9 +154,6 @@ export function init() {
   try {
     if (typeof AudioContext !== 'undefined') {
       audioContext = new AudioContext();
-      // }
-      // else if (typeof webkitAudioContext !== 'undefined') {
-      //   audioContext = new webkitAudioContext(); // eslint-disable-line
     } else {
       usingWebAudio = false;
     }
@@ -172,13 +163,8 @@ export function init() {
 
   // context state at this time is `undefined` in iOS8 Safari
   if (usingWebAudio && audioContext.state === 'suspended') {
-    alert('webaudio suspended'); // eslint-disable-line
-
     const resume = () => {
       audioContext.resume();
-
-      alert('webaudio resuming'); // eslint-disable-line
-      play(true);
 
       setTimeout(() => {
         if (audioContext.state === 'running') {
