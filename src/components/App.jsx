@@ -58,32 +58,17 @@ class App extends Component {
         <TempoSlider handleChange={setTempo} tempo={tempo} />
         <PlayPauseBtn label={label} handleClick={togglePlayPause} />
         <div className="volume-controls">
+          <hr />
+          <VolumeSlider title="Master" volume={masterVolume} handleChange={setMasterVolume} />
+          <VolumeSlider title="Accent" volume={accentVolume} handleChange={setAccentVolume} />
+          <VolumeSlider title="Quarter" volume={quarterVolume} handleChange={setQuarterVolume} />
+          <VolumeSlider title="Eigth" volume={eighthVolume} handleChange={setEigthVolume} />
           <VolumeSlider
-            title="Master Volume"
-            volume={masterVolume}
-            handleChange={setMasterVolume}
-          />
-          <VolumeSlider
-            title="Accent Volume"
-            volume={accentVolume}
-            handleChange={setAccentVolume}
-          />
-          <VolumeSlider
-            title="Quarter Volume"
-            volume={quarterVolume}
-            handleChange={setQuarterVolume}
-          />
-          <VolumeSlider title="Eigth Volume" volume={eighthVolume} handleChange={setEigthVolume} />
-          <VolumeSlider
-            title="Sixteenth Volume"
+            title="Sixteenth"
             volume={sixteenthVolume}
             handleChange={setSixteenthVolume}
           />
-          <VolumeSlider
-            title="Triplet Volume"
-            volume={tripletVolume}
-            handleChange={setTripletVolume}
-          />
+          <VolumeSlider title="Triplet" volume={tripletVolume} handleChange={setTripletVolume} />
         </div>
       </div>
     );
