@@ -15,15 +15,18 @@ body {
 .rangeslider.rangeslider-horizontal {
   border-radius: 0;
   box-shadow: none;
+  border: 1px solid $dark-grey;
+  background-color: $white;
+  height: 8px;
 
   .rangeslider__fill {
-    background-color: #222;
+    background-color: $dark-grey;
     border-radius: 0;
     box-shadow: none;
   }
 
   .rangeslider__handle {
-    border: 2px solid #222;
+    border: 2px solid $dark-grey;
     box-shadow: none;
 
     &::after {
