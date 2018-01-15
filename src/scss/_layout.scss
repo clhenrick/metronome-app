@@ -10,7 +10,26 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-// override react-rangeslider
+// prevent selection of text on all text elements
+// because text selection can be annoying with an app
+// especially on mobile devices
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+button {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+// override react-rangeslider styles
 .rangeslider,
 .rangeslider.rangeslider-horizontal {
   border-radius: 0;
