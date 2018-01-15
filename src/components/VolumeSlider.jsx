@@ -26,7 +26,7 @@ class VolumeSlider extends Component {
         <Slider
           min={0}
           max={1}
-          orientation="vertical"
+          orientation="horizontal"
           onChange={this.handleChange}
           step={0.01}
           tooltip={false}

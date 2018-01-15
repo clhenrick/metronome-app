@@ -18,6 +18,7 @@ const VolumeControls = ({
   setMasterVolume,
 }) => (
   <div className="VolumeControls">
+    <h3 className="title">Volume</h3>
     <VolumeSlider title="Master" volume={masterVolume} handleChange={setMasterVolume} />
     <VolumeSlider title="Accent" volume={accentVolume} handleChange={setAccentVolume} />
     <VolumeSlider title="Quarter" volume={quarterVolume} handleChange={setQuarterVolume} />
