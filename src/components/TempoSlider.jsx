@@ -4,26 +4,9 @@ import Slider from 'react-rangeslider';
 
 class TempoSlider extends Component {
   static propTypes = {
-    handleChangeStart: PropTypes.func,
-    handleChange: PropTypes.func,
-    handleChangeComplete: PropTypes.func,
+    handleChange: PropTypes.func.isRequired,
     tempo: PropTypes.number.isRequired,
   };
-
-  static defaultProps = {
-    handleChangeStart: () => {},
-    handleChange: () => {},
-    handleChangeComplete: () => {},
-  };
-
-  constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(value) {
-    this.props.handleChange(value);
-  }
 
   handleClick(value) {
     const { handleChange, tempo } = this.props;
@@ -41,7 +24,7 @@ class TempoSlider extends Component {
   }
 
   render() {
-    const { handleChangeStart, handleChangeComplete, handleChange, tempo } = this.props;
+    const { handleChange, tempo } = this.props;
     return (
       <div className="TempoSlider">
         <h3 className="title">Tempo</h3>
@@ -52,9 +35,7 @@ class TempoSlider extends Component {
             min={0}
             max={250}
             orientation="horizontal"
-            onChangeStart={handleChangeStart}
             onChange={value => handleChange(value)}
-            onChangeComplete={handleChangeComplete}
             tooltip={false}
             value={tempo}
           />
