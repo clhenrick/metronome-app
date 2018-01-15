@@ -25,9 +25,11 @@ class App extends Component {
     const label = isPlaying ? 'pause' : 'play';
     return (
       <div className="App">
-        <TempoDisplay tempo={tempo} />
+        <div className="top-controls-panel">
+          <TempoDisplay tempo={tempo} />
+          <PlayPauseBtn label={label} handleClick={togglePlayPause} />
+        </div>
         <TempoSlider handleChange={setTempo} tempo={tempo} />
-        <PlayPauseBtn label={label} handleClick={togglePlayPause} />
         <VolumeControls {...this.props} />
       </div>
     );

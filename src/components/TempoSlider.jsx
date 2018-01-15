@@ -36,6 +36,7 @@ class TempoSlider extends Component {
           onChangeStart={handleChangeStart}
           onChange={value => handleChange(value)}
           onChangeComplete={handleChangeComplete}
+          tooltip={false}
           value={tempo}
         />
       </div>

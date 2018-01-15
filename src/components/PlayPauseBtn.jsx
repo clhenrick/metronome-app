@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const PlayPauseBtn = ({ label, handleClick }) => (
-  <button className="PlayPauseBtn button-primary" onClick={handleClick}>
+  <button className="PlayPauseBtn" onClick={handleClick}>
     {label}
   </button>
 );

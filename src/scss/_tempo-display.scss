@@ -1,6 +1,10 @@
 .TempoDisplay {
+  width: 70%;
+  display: inline-block;
+
   p {
-    font-size: 2.8rem;
+    font-size: 2.4rem;
+    margin: 0;
   }
 
   span {

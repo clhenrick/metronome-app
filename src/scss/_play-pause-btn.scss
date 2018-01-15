@@ -1,3 +1,15 @@
 .PlayPauseBtn {
+  height: 50px;
+  width: 30%;
+  display: inline-block;
+  margin: 0;
   font-size: 1.8rem;
+  color: $white;
+  background-color: $dark-grey;
+  padding: 0 20px;
+
+  &:hover {
+    color: $white;
+    background: $dark-grey;
+  }
 }
