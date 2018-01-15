@@ -1,8 +1,9 @@
 .App {
   position: relative;
-  width: calc(100vw - 50px);
-  height: calc(100vh - 50px);
+  width: calc(100% - 50px);
+  height: calc(100% - 50px);
+  overflow-x: hidden;
   padding: 25px;
-  background: papayawhip;
-  color: steelblue;
+  background: $white;
+  color: $dark-grey;
 }

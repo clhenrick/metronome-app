@@ -2,8 +2,12 @@
 @import '~skeleton-scss/scss/skeleton';
 @import '~react-rangeslider/lib/index.css';
 
+@import 'variables';
+
 @import 'app';
 @import 'layout';
 @import 'play-pause-btn';
 @import 'tempo-display';
 @import 'tempo-slider';
+@import 'volume-slider';
+@import 'volume-controls';

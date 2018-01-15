@@ -6,6 +6,7 @@ import { init } from '../utils/metronome';
 import TempoDisplay from './TempoDisplay';
 import TempoSlider from './TempoSlider';
 import PlayPauseBtn from './PlayPauseBtn';
+import VolumeControls from './VolumeControls';
 
 class App extends Component {
   static propTypes = {
@@ -27,6 +28,7 @@ class App extends Component {
         <TempoDisplay tempo={tempo} />
         <TempoSlider handleChange={setTempo} tempo={tempo} />
         <PlayPauseBtn label={label} handleClick={togglePlayPause} />
+        <VolumeControls {...this.props} />
       </div>
     );
   }

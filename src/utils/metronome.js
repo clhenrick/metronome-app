@@ -4,6 +4,7 @@
 
 import Worker from './worker';
 
+const timerWorker = new Worker(); // The Web Worker used to fire timer messages
 let audioContext = null;
 let currentTwelveletNote; // What note is currently last scheduled?
 let tempo = 120.0; // tempo (in beats per minute)
@@ -31,8 +32,6 @@ const noteLength = 0.05;
 // the notes that have been put into the web audio,
 // and may or may not have played yet. {note, time}
 const notesInQueue = [];
-
-let timerWorker = null; // The Web Worker used to fire timer messages
 
 export function setTempo(_) {
   tempo = _;
@@ -144,9 +143,6 @@ export function play(isPlaying) {
 }
 
 export function init() {
-  audioContext = null;
-  timerWorker = new Worker();
-
   // hack so that AudioContext works on iOS
   // code credit: https://gist.github.com/laziel/7aefabe99ee57b16081c
   let usingWebAudio = true;
