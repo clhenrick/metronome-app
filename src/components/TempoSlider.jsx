@@ -29,6 +29,7 @@ class TempoSlider extends Component {
     const { handleChangeStart, handleChangeComplete, handleChange, tempo } = this.props;
     return (
       <div className="TempoSlider">
+        <h3>Tempo</h3>
         <Slider
           min={0}
           max={250}

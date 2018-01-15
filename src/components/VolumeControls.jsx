@@ -21,9 +21,13 @@ const VolumeControls = ({
     <h3 className="title">Volume</h3>
     <VolumeSlider title="Master" volume={masterVolume} handleChange={setMasterVolume} />
     <VolumeSlider title="Accent" volume={accentVolume} handleChange={setAccentVolume} />
-    <VolumeSlider title="Quarter" volume={quarterVolume} handleChange={setQuarterVolume} />
-    <VolumeSlider title="Eigth" volume={eighthVolume} handleChange={setEigthVolume} />
-    <VolumeSlider title="Sixteenth" volume={sixteenthVolume} handleChange={setSixteenthVolume} />
+    <VolumeSlider title="Quarter Note" volume={quarterVolume} handleChange={setQuarterVolume} />
+    <VolumeSlider title="Eigth Note" volume={eighthVolume} handleChange={setEigthVolume} />
+    <VolumeSlider
+      title="Sixteenth Note"
+      volume={sixteenthVolume}
+      handleChange={setSixteenthVolume}
+    />
     <VolumeSlider title="Triplet" volume={tripletVolume} handleChange={setTripletVolume} />
   </div>
 );
