@@ -11,7 +11,28 @@ body {
 }
 
 // override react-rangeslider
-.rangeslider .rangeslider__handle::after {
-  // remove inner circle in handle
-  content: initial;
+.rangeslider,
+.rangeslider.rangeslider-horizontal {
+  border-radius: 0;
+  box-shadow: none;
+
+  .rangeslider__fill {
+    background-color: #222;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .rangeslider__handle {
+    border: 2px solid #222;
+    box-shadow: none;
+
+    &::after {
+      // remove inner circle in handle
+      content: initial;
+      box-shadow: none;
+    }
+  }
+
+  .rangeslider__handle-tooltip {
+  }
 }
