@@ -18,6 +18,7 @@ module.exports = merge.smart(common, {
   // webpack dev-server configuration
   devServer: {
     compress: true, // use compression
+    host: '192.168.0.235',
     port: process.env.PORT || DEFAULT_PORT, // what port on localhost content will be served from
     hot: true, // for hot-module-replacement,
     historyApiFallback: true,
