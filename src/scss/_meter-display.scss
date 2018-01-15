@@ -1,0 +1,15 @@
+.MeterDisplay {
+  .title {
+    margin: 0;
+  }
+
+  p {
+    @extend %big-font;
+    font-size: $font-size-big;
+    letter-spacing: -0.25rem;
+
+    span {
+      letter-spacing: -1rem;
+    }
+  }
+}

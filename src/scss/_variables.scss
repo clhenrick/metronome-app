@@ -1,3 +1,10 @@
 // UI colors
 $dark-grey: #222;
 $white: #fff;
+
+$font-size-big: 8.8rem;
+
+%big-font {
+  font-size: $font-size-big;
+  line-height: 9rem;
+}
