@@ -1,3 +1,28 @@
 .TempoSlider {
-  // padding-bottom: 25px;
+  padding-bottom: 10px;
+
+  .title {
+    margin: 0;
+  }
+
+  .tempo-slider__controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .rangeslider__tempo {
+    display: inline-block;
+    width: calc(100% - (38px * 2) - 20px);
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  button {
+    width: 38px;
+    display: inline-block;
+    font-weight: 300;
+    padding: 0 8px;
+    margin: 0;
+  }
 }

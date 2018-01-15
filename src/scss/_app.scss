@@ -1,9 +1,9 @@
 .App {
   position: relative;
-  width: calc(100% - 50px);
-  height: calc(100% - 50px);
+  width: calc(100% - 24px);
+  height: calc(100% - 24px);
   overflow-x: hidden;
-  padding: 10px 25px;
+  padding: 12px;
   background: $white;
   color: $dark-grey;
 }

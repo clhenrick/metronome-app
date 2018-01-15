@@ -25,21 +25,41 @@ class TempoSlider extends Component {
     this.props.handleChange(value);
   }
 
+  handleClick(value) {
+    const { handleChange, tempo } = this.props;
+
+    switch (value) {
+      case 'increment':
+        handleChange(tempo + 1);
+        break;
+      case 'decrement':
+        handleChange(tempo - 1);
+        break;
+      default:
+        break;
+    }
+  }
+
   render() {
     const { handleChangeStart, handleChangeComplete, handleChange, tempo } = this.props;
     return (
       <div className="TempoSlider">
-        <h3>Tempo</h3>
-        <Slider
-          min={0}
-          max={250}
-          orientation="horizontal"
-          onChangeStart={handleChangeStart}
-          onChange={value => handleChange(value)}
-          onChangeComplete={handleChangeComplete}
-          tooltip={false}
-          value={tempo}
-        />
+        <h3 className="title">Tempo</h3>
+        <div className="tempo-slider__controls">
+          <button onClick={() => this.handleClick('decrement')}>–</button>
+          <Slider
+            className="rangeslider__tempo"
+            min={0}
+            max={250}
+            orientation="horizontal"
+            onChangeStart={handleChangeStart}
+            onChange={value => handleChange(value)}
+            onChangeComplete={handleChangeComplete}
+            tooltip={false}
+            value={tempo}
+          />
+          <button onClick={() => this.handleClick('increment')}>+</button>
+        </div>
       </div>
     );
   }
