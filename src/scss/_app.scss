@@ -6,4 +6,10 @@
   padding: 12px;
   background: $white;
   color: $dark-grey;
+
+  .meter-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
 }
