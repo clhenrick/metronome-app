@@ -7,6 +7,10 @@
   background: $white;
   color: $dark-grey;
 
+  .meter-panel {
+    padding-bottom: 10px;
+  }
+
   .meter-panel > div {
     display: flex;
     justify-content: space-between;
