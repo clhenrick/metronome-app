@@ -26,17 +26,19 @@ class App extends Component {
 
   render() {
     const { isPlaying, meter, setMeter, setTempo, tempo, togglePlayPause } = this.props;
-    const label = isPlaying ? 'pause' : 'play';
     return (
       <div className="App">
         <div className="top-controls-panel">
           <TempoDisplay tempo={tempo} />
-          <PlayPauseBtn label={label} handleClick={togglePlayPause} />
+          <PlayPauseBtn isPlaying={isPlaying} handleClick={togglePlayPause} />
         </div>
         <TempoSlider handleChange={setTempo} tempo={tempo} />
         <div className="meter-panel">
-          <MeterDisplay meter={meter} />
-          <MeterControl handleChange={setMeter} meter={meter} />
+          <h3 className="title">Meter</h3>
+          <div>
+            <MeterDisplay meter={meter} />
+            <MeterControl handleChange={setMeter} meter={meter} />
+          </div>
         </div>
         <VolumeControls {...this.props} />
       </div>
