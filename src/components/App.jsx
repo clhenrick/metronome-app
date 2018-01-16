@@ -35,8 +35,11 @@ class App extends Component {
         </div>
         <TempoSlider handleChange={setTempo} tempo={tempo} />
         <div className="meter-panel">
-          <MeterDisplay meter={meter} />
-          <MeterControl handleChange={setMeter} meter={meter} />
+          <h3 className="title">Meter</h3>
+          <div>
+            <MeterDisplay meter={meter} />
+            <MeterControl handleChange={setMeter} meter={meter} />
+          </div>
         </div>
         <VolumeControls {...this.props} />
       </div>

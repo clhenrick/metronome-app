@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { ArrowDown, ArrowUp } from './Icons';
+
 const MeterControl = ({ meter, handleChange }) => {
   function handleClick(action) {
     switch (action) {
@@ -19,8 +21,12 @@ const MeterControl = ({ meter, handleChange }) => {
 
   return (
     <div className="MeterControl">
-      <button onClick={() => handleClick('increment')}>up</button>
-      <button onClick={() => handleClick('decrement')}>down</button>
+      <button onClick={() => handleClick('increment')}>
+        <ArrowUp width={50} height={50} fillColor="#f93bcf" />
+      </button>
+      <button onClick={() => handleClick('decrement')}>
+        <ArrowDown width={50} height={50} fillColor="#f93bcf" />
+      </button>
     </div>
   );
 };

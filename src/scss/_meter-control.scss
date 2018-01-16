@@ -1,4 +1,5 @@
 .MeterControl {
+  height: 90px; // matches tempo display height
   width: 50%;
   display: inline-block;
 
@@ -8,5 +9,7 @@
     display: block;
     margin: 0 auto;
     font-size: 1.8rem;
+    background-color: $white;
+    border: none;
   }
 }

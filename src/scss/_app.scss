@@ -7,9 +7,9 @@
   background: $white;
   color: $dark-grey;
 
-  .meter-panel {
+  .meter-panel > div {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
   }
 }
