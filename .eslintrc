@@ -2,11 +2,13 @@
   "extends": [
     "airbnb",
     "prettier",
-    "prettier/react"
+    "prettier/react",
+    "plugin:jest/recommended"
   ],
   "env": {
     "browser": true,
-    "es6": true
+    "es6": true,
+    "jest/globals": true
   },
   "globals": {
     "L": false,
@@ -25,7 +27,8 @@
     "react",
     "jsx-a11y",
     "babel",
-    "prettier"
+    "prettier",
+    "jest"
   ],
   "rules": {
     "arrow-body-style": ["error", "as-needed"],
