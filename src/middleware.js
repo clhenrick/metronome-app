@@ -29,7 +29,7 @@ const middleware = [];
 
 // this middleware passes redux state updates to relevant metronome logic
 // there's probably a more elegant or less redundant way of doing this!
-const metronomeMiddleware = store => next => action => {
+export const metronomeMiddleware = store => next => action => {
   // intercept whatever action is being passed to redux, and then get parts of state to pass to the metronome
   // here state reflects changes already made by the reducer as the action is dispatched via next(action)
   const result = next(action);
