@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function IconWrapper({ fillColor, width, height }, children) {
+// exported for testing
+export function IconWrapper({ fillColor, width, height }, children) {
   return (
     <svg fill={fillColor} height={height} viewBox="0 0 24 24" width={width}>
       {children}
