@@ -9,6 +9,7 @@ import TempoDisplay from './TempoDisplay';
 import TempoSlider from './TempoSlider';
 import PlayPauseBtn from './PlayPauseBtn';
 import VolumeControls from './VolumeControls';
+import preventDoubleTapZoom from '../utils/helpers';
 
 class App extends Component {
   static propTypes = {
@@ -22,12 +23,29 @@ class App extends Component {
 
   componentDidMount() {
     init();
+    this.bindListeners();
   }
+
+  componentWillUnmount() {
+    this.unbindListeners();
+  }
+
+  bindListeners = () => {
+    this.app.addEventListener('touchstart', preventDoubleTapZoom);
+  };
+
+  unbindListeners = () => {
+    this.app.removeEventListener('touchstart', preventDoubleTapZoom);
+  };
+
+  createAppRef = _ => {
+    this.app = _;
+  };
 
   render() {
     const { isPlaying, meter, setMeter, setTempo, tempo, togglePlayPause } = this.props;
     return (
-      <div className="App">
+      <div className="App" ref={this.createAppRef}>
         <div className="top-controls-panel">
           <TempoDisplay tempo={tempo} />
           <PlayPauseBtn isPlaying={isPlaying} handleClick={togglePlayPause} />
