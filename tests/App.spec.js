@@ -9,15 +9,15 @@ import TempoDisplay from '../src/components/TempoDisplay';
 import TempoSlider from '../src/components/TempoSlider';
 import PlayPauseBtn from '../src/components/PlayPauseBtn';
 import VolumeControls from '../src/components/VolumeControls';
+
 import preventDoubleTapZoom from '../src/utils/helpers';
+import { init } from '../src/utils/metronome';
 
 configure({ adapter: new Adapter() });
 
 jest.mock('../src/utils/worker.js');
 jest.mock('../src/utils/metronome.js');
-// jest.mock('../src/utils/helpers.js');
-// const preventDoubleTapZoom = require('../src/utils/helpers');
-jest.mock('../src/utils/helpers', () => jest.fn());
+jest.mock('../src/utils/helpers.js');
 
 jest.useFakeTimers();
 
@@ -44,6 +44,15 @@ describe('App', () => {
   };
   const app = mount(<App {...props} />);
 
+  it('has correct props', () => {
+    expect(app.props()).toHaveProperty('meter');
+    expect(app.props()).toHaveProperty('tempo');
+    expect(app.props()).toHaveProperty('isPlaying');
+    expect(app.props()).toHaveProperty('setMeter');
+    expect(app.props()).toHaveProperty('setTempo');
+    expect(app.props()).toHaveProperty('togglePlayPause');
+  });
+
   it('has the class name "App"', () => {
     expect(
       app
@@ -53,13 +62,12 @@ describe('App', () => {
     ).toEqual(true);
   });
 
-  it('has correct props', () => {
-    expect(app.props()).toHaveProperty('meter');
-    expect(app.props()).toHaveProperty('tempo');
-    expect(app.props()).toHaveProperty('isPlaying');
-    expect(app.props()).toHaveProperty('setMeter');
-    expect(app.props()).toHaveProperty('setTempo');
-    expect(app.props()).toHaveProperty('togglePlayPause');
+  it('has a top controls panel div', () => {
+    expect(app.find('.top-controls-panel')).toHaveLength(1);
+  });
+
+  it('has a meter panel div', () => {
+    expect(app.find('.meter-panel')).toHaveLength(1);
   });
 
   it('renders TempoDisplay', () => {
@@ -92,5 +100,9 @@ describe('App', () => {
     // https://facebook.github.io/jest/docs/en/mock-functions.html
     app.find('.App').simulate('touchstart');
     expect(preventDoubleTapZoom).toBeCalled();
+  });
+
+  it("invokes metronome's init()", () => {
+    expect(init).toBeCalled();
   });
 });
