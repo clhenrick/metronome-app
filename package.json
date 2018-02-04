@@ -12,7 +12,7 @@
     "build": "export NODE_ENV=production && npm run clean && webpack -p --progress --colors --config webpack.config.prod.js",
     "clean": "rimraf dist",
     "deploy:gh-pages": "npm run build && . ./deploy_gh_pages.sh",
-    "eslint-check": "eslint --print-config .eslintrc | eslint-config-prettier-check",
+    "eslint-check": "eslint $(find src -name '*.js' ! -name '*.spec.js')",
     "test": "jest",
     "test:watch": "npm test -- --watch"
   },
