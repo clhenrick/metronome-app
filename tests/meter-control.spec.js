@@ -19,4 +19,8 @@ describe('MeterControl', () => {
     expect(wrapper.props()).toHaveProperty('handleChange');
     expect(typeof wrapper.prop('handleChange')).toBe('function');
   });
+
+  it('has two buttons', () => {
+    expect(wrapper.find('button')).toHaveLength(2);
+  });
 });
