@@ -4,6 +4,7 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.config.common.js');
 
+const DEFAULT_HOST = 'localhost'
 const DEFAULT_PORT = 3000;
 
 module.exports = merge.smart(common, {
@@ -18,7 +19,7 @@ module.exports = merge.smart(common, {
   // webpack dev-server configuration
   devServer: {
     compress: true, // use compression
-    host: '192.168.0.235',
+    host: process.env.HOST || DEFAULT_HOST,
     port: process.env.PORT || DEFAULT_PORT, // what port on localhost content will be served from
     hot: true, // for hot-module-replacement,
     historyApiFallback: true,
