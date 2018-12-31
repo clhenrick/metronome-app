@@ -10,8 +10,6 @@ const MeterControl = ({ meter, handleChange }) => {
         handleChange(meter + 1);
         break;
       case 'decrement':
-        // prevent meter from reaching zero
-        if (meter === 1) return;
         handleChange(meter - 1);
         break;
       default:

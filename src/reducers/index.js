@@ -24,6 +24,20 @@ export const defaultState = {
   tripletVolume: 0,
 };
 
+const keepWithinRange = range => value => {
+  if (value <= range.max && value >= range.min) {
+    return value;
+  }
+  if (value > range.max) {
+    return range.max;
+  }
+  return range.min;
+};
+
+const keepWithinTempoRange = keepWithinRange({ min: 1, max: 250 });
+const keepWithinMeterRange = keepWithinRange({ min: 1, max: 13 });
+const keepWithinVolumeRange = keepWithinRange({ min: 0, max: 1 });
+
 export default function(state = defaultState, action) {
   switch (action.type) {
     case TOGGLE_PLAY_PAUSE:
@@ -35,49 +49,49 @@ export default function(state = defaultState, action) {
     case SET_TEMPO:
       return {
         ...state,
-        tempo: action.tempo,
+        tempo: keepWithinTempoRange(action.tempo),
       };
 
     case SET_METER:
       return {
         ...state,
-        meter: action.meter,
+        meter: keepWithinMeterRange(action.meter),
       };
 
     case SET_MASTER_VOLUME:
       return {
         ...state,
-        masterVolume: action.masterVolume,
+        masterVolume: keepWithinVolumeRange(action.masterVolume),
       };
 
     case SET_ACCENT_VOLUME:
       return {
         ...state,
-        accentVolume: action.accentVolume,
+        accentVolume: keepWithinVolumeRange(action.accentVolume),
       };
 
     case SET_QUARTER_VOLUME:
       return {
         ...state,
-        quarterVolume: action.quarterVolume,
+        quarterVolume: keepWithinVolumeRange(action.quarterVolume),
       };
 
     case SET_EIGTH_VOLUME:
       return {
         ...state,
-        eighthVolume: action.eighthVolume,
+        eighthVolume: keepWithinVolumeRange(action.eighthVolume),
       };
 
     case SET_SIXTEENTH_VOLUME:
       return {
         ...state,
-        sixteenthVolume: action.sixteenthVolume,
+        sixteenthVolume: keepWithinVolumeRange(action.sixteenthVolume),
       };
 
     case SET_TRIPLET_VOLUME:
       return {
         ...state,
-        tripletVolume: action.tripletVolume,
+        tripletVolume: keepWithinVolumeRange(action.tripletVolume),
       };
 
     default:
