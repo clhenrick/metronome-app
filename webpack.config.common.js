@@ -39,12 +39,6 @@ module.exports = {
             },
           },
           {
-            loader: 'eslint-loader',
-            options: {
-              failOnError: false, // temporary
-            },
-          },
-          {
             loader: 'babel-loader',
           },
         ],
@@ -56,13 +50,7 @@ module.exports = {
         use: [
           {
             loader: 'babel-loader',
-          },
-          {
-            loader: 'eslint-loader',
-            options: {
-              failOnError: false, // temporary
-            },
-          },
+          }
         ],
       },
       // Use Sass and transpile to CSS
