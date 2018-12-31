@@ -5,12 +5,12 @@ A mobile friendly metronome web app built using the Web Audio API, Web Workers, 
 Checkout the open issues if you'd like to contribute!
 
 ## Motivation
-I started developing this app so that I could have a web based metronome with a clean and simple UI with a friendly mobile UX while practicing drums. 
-I didn't want to download another metronome app and couldn't seem to find a free one on the web that I liked.
-Web based metronomes apparently are fairly rare or difficult to find, and the ones I did come across were ugly and had a poor UX on mobile / only worked on desktop. 
+I started developing this app so that I could have a web based metronome with a simple UI and a friendly mobile UX while practicing drums. 
+I didn't want to download another metronome app to my phone (my previous one stopped getting updated and was no longer supported on iOS) 
+and I couldn't seem to find a free one on the web that I liked.
 Google provides a working web based metronome at the top of its search results, but its fairly limited in terms of interaction.
-I wanted something that was easy to adjust the meter, tempo, volume, and sub-divisions
-similar to a digital metronome or drum machine such as the [Dr. Beat](https://www.boss.info/us/products/db-90/) I used to use as a kid.
+I wanted something that was easy to adjust the meter, tempo, volume, and beat sub-divisions
+similar to a digital metronome or drum machine such as the [Dr. Beat](https://www.boss.info/us/products/db-90/) I used to practice with as a kid.
 
 ## Install
 Requires Node.js, npm, and optionally Yarn for managing dependecies, compiling source code, and running tests.
