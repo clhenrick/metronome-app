@@ -7,6 +7,9 @@
   "author": "Chris Henrick <chrishenrick@gmail.com>",
   "license": "MIT",
   "private": true,
+  "jest": {
+    "testURL": "http://localhost"
+  },
   "scripts": {
     "start": "export NODE_ENV=development && webpack-dev-server --config webpack.config.dev.js",
     "build": "export NODE_ENV=production && npm run clean && webpack -p --progress --colors --config webpack.config.prod.js",
