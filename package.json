@@ -7,6 +7,9 @@
   "author": "Chris Henrick <chrishenrick@gmail.com>",
   "license": "MIT",
   "private": true,
+  "jest": {
+    "testURL": "http://localhost"
+  },
   "scripts": {
     "start": "export NODE_ENV=development && webpack-dev-server --config webpack.config.dev.js",
     "build": "export NODE_ENV=production && npm run clean && webpack -p --progress --colors --config webpack.config.prod.js",
@@ -43,6 +46,7 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.6",
     "html-webpack-plugin": "^2.30.1",
+    "jest": "^22.1.4",
     "node-sass": "^4.11.0",
     "postcss": "^6.0.14",
     "postcss-loader": "^2.0.9",
