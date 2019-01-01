@@ -9,7 +9,7 @@ describe('reducer', () => {
       meter: 4,
       masterVolume: 0.5,
       accentVolume: 1,
-      quarterVolume: 0.7,
+      quarterVolume: 0.75,
       eighthVolume: 0,
       sixteenthVolume: 0,
       tripletVolume: 0,
