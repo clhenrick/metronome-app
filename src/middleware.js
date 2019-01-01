@@ -22,7 +22,9 @@ import {
   SET_EIGTH_VOLUME,
   SET_SIXTEENTH_VOLUME,
   SET_TRIPLET_VOLUME,
+  SAVE_APP_STATE_ACTIONS
 } from './constants';
+import {setSavedState} from "./utils/localstorage"
 
 // all Redux middleware will be exported within this array, aka the "middleware chain"
 const middleware = [];
@@ -88,8 +90,21 @@ export const metronomeMiddleware = store => next => action => {
   return result;
 };
 
-// add the metronome middleware to the middleware chain
+// save the application state to localstorage on certain actions only
+export const localStorageMiddleware = store => next => action => {
+  const result = next(action);
+  const state = store.getState();
+
+  if (SAVE_APP_STATE_ACTIONS.indexOf(action.type) !== -1) {
+    setSavedState(state);
+  }
+
+  return result;
+}
+
+// add the custom middleware to the middleware chain
 middleware.push(metronomeMiddleware);
+middleware.push(localStorageMiddleware);
 
 if (typeof window !== 'undefined' && process.env.NODE_ENV !== 'production') {
   // redux-logger only works in a browser environment
