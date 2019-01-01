@@ -24,5 +24,3 @@ self.onmessage = e => {
     timerID = null;
   }
 };
-
-self.postMessage('hi there');
