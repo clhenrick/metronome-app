@@ -10,18 +10,26 @@ import {
   SET_EIGTH_VOLUME,
   SET_SIXTEENTH_VOLUME,
   SET_TRIPLET_VOLUME,
+  DEFAULT_TEMPO,
+  DEFAULT_METER,
+  DEFAULT_MASTER_VOLUME,
+  DEFAULT_ACCENT_VOLUME,
+  DEFAULT_QUARTER_VOLUME,
+  DEFAULT_EIGTH_VOLUME,
+  DEFAULT_SIXTEENTH_VOLUME,
+  DEFAULT_TRIPLET_VOLUME
 } from '../constants';
 
 export const defaultState = {
   isPlaying: false,
-  tempo: 120.0,
-  meter: 4,
-  masterVolume: 0.5,
-  accentVolume: 1,
-  quarterVolume: 0.7,
-  eighthVolume: 0,
-  sixteenthVolume: 0,
-  tripletVolume: 0,
+  tempo: DEFAULT_TEMPO,
+  meter: DEFAULT_METER,
+  masterVolume: DEFAULT_MASTER_VOLUME,
+  accentVolume: DEFAULT_ACCENT_VOLUME,
+  quarterVolume: DEFAULT_QUARTER_VOLUME,
+  eighthVolume: DEFAULT_EIGTH_VOLUME,
+  sixteenthVolume: DEFAULT_SIXTEENTH_VOLUME,
+  tripletVolume: DEFAULT_TRIPLET_VOLUME,
 };
 
 const keepWithinRange = range => value => {
