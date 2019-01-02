@@ -3,7 +3,7 @@
 // ported to ES6
 
 import Worker from './worker';
-import store from "../store";
+import store from '../store';
 
 const timerWorker = new Worker(); // The Web Worker used to fire timer messages
 let audioContext = null;
@@ -11,7 +11,7 @@ let currentTwelveletNote; // What note is currently last scheduled?
 
 // NOTE: these values end up mirroring the redux state
 // the code in this module should be refactored so that these are pulled directly
-// from the redux store, using store.subscribe and store.getState 
+// from the redux store, using store.subscribe and store.getState
 // this would also allievate the need for the custom metronome middleware in middleware.js
 let tempo; // tempo (in beats per minute)
 let meter;

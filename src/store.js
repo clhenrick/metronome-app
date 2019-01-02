@@ -1,5 +1,5 @@
 import { applyMiddleware, createStore } from 'redux';
-import { getSavedState } from "./utils/localstorage";
+import { getSavedState } from './utils/localstorage';
 
 import rootReducer from './reducers/';
 import middleware from './middleware';

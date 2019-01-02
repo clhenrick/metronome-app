@@ -1,6 +1,6 @@
-import {defaultState} from "../reducers";
+import { defaultState } from '../reducers';
 
-const storageKey = "metronome-app-state";
+const storageKey = 'metronome-app-state';
 
 export function getSavedState() {
   const storage = window.localStorage;
@@ -9,8 +9,8 @@ export function getSavedState() {
     return defaultState;
   }
 
-  let state = storage.getItem(storageKey)
-  
+  let state = storage.getItem(storageKey);
+
   if (state) {
     state = JSON.parse(state);
     state = {
@@ -18,19 +18,19 @@ export function getSavedState() {
       ...state
     };
   }
-  
+
   return state || defaultState;
 }
 
 export function setSavedState(state) {
   const storage = window.localStorage;
-  
+
   if (!storage) {
     return;
   }
 
   // ignore the isPlaying boolean when saving app state
-  const {isPlaying, ...rest} = state;
+  const { isPlaying, ...rest } = state;
 
   storage.setItem(storageKey, JSON.stringify(rest));
 }
