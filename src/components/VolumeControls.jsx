@@ -15,7 +15,7 @@ const VolumeControls = ({
   setEigthVolume,
   setSixteenthVolume,
   setTripletVolume,
-  setMasterVolume,
+  setMasterVolume
 }) => (
   <div className="VolumeControls">
     <h3 className="title">Volume</h3>
@@ -48,7 +48,7 @@ VolumeControls.propTypes = {
   setEigthVolume: PropTypes.func.isRequired,
   setSixteenthVolume: PropTypes.func.isRequired,
   setTripletVolume: PropTypes.func.isRequired,
-  setMasterVolume: PropTypes.func.isRequired,
+  setMasterVolume: PropTypes.func.isRequired
 };
 
 export default VolumeControls;

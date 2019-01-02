@@ -10,7 +10,7 @@ const MeterDisplay = ({ meter }) => (
 );
 
 MeterDisplay.propTypes = {
-  meter: PropTypes.number.isRequired,
+  meter: PropTypes.number.isRequired
 };
 
 export default MeterDisplay;

@@ -18,7 +18,7 @@ class App extends Component {
     setTempo: PropTypes.func.isRequired,
     tempo: PropTypes.number.isRequired,
     togglePlayPause: PropTypes.func.isRequired,
-    isPlaying: PropTypes.bool.isRequired,
+    isPlaying: PropTypes.bool.isRequired
   };
 
   componentDidMount() {

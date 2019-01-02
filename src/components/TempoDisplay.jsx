@@ -10,7 +10,7 @@ const TempoDisplay = ({ tempo }) => (
 );
 
 TempoDisplay.propTypes = {
-  tempo: PropTypes.number.isRequired,
+  tempo: PropTypes.number.isRequired
 };
 
 export default TempoDisplay;

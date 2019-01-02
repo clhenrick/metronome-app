@@ -9,7 +9,7 @@ jest.useFakeTimers();
 const create = () => {
   const store = {
     getState: jest.fn(() => ({})),
-    dispatch: jest.fn(),
+    dispatch: jest.fn()
   };
   const next = jest.fn();
   const invoke = action => metronomeMiddleware(store)(next)(action);
