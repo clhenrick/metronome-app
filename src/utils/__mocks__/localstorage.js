@@ -20,7 +20,7 @@ class LocalStorageMock {
   }
 }
 
-global.localStorage = new LocalStorageMock;
+global.localStorage = new LocalStorageMock();
 
 const getSavedState = jest.fn();
 const setSavedState = jest.fn();
