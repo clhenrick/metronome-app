@@ -8,7 +8,7 @@ configure({ adapter: new Adapter() });
 
 describe('MeterDisplay', () => {
   const props = {
-    meter: 4,
+    meter: 4
   };
   const wrapper = mount(<MeterDisplay meter={props.meter} />);
 

@@ -6,7 +6,7 @@ class VolumeSlider extends Component {
   static propTypes = {
     handleChange: PropTypes.func.isRequired,
     title: PropTypes.string.isRequired,
-    volume: PropTypes.number.isRequired,
+    volume: PropTypes.number.isRequired
   };
 
   constructor(props) {

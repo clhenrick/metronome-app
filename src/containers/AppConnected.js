@@ -4,4 +4,7 @@ import App from '../components/App';
 
 const mapStateToProps = state => state;
 
-export default connect(mapStateToProps, { ...actions })(App);
+export default connect(
+  mapStateToProps,
+  { ...actions }
+)(App);

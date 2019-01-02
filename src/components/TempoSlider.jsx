@@ -5,7 +5,7 @@ import Slider from 'react-rangeslider';
 class TempoSlider extends Component {
   static propTypes = {
     handleChange: PropTypes.func.isRequired,
-    tempo: PropTypes.number.isRequired,
+    tempo: PropTypes.number.isRequired
   };
 
   handleClick(value) {

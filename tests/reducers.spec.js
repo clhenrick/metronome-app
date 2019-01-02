@@ -12,30 +12,30 @@ describe('reducer', () => {
       quarterVolume: 0.7,
       eighthVolume: 0,
       sixteenthVolume: 0,
-      tripletVolume: 0,
+      tripletVolume: 0
     });
   });
 
   it('should handle TOGGLE_PLAY_PAUSE', () => {
     expect(
       reducer(defaultState, {
-        type: types.TOGGLE_PLAY_PAUSE,
+        type: types.TOGGLE_PLAY_PAUSE
       })
     ).toEqual({
       ...defaultState,
-      isPlaying: true,
+      isPlaying: true
     });
 
     expect(
       reducer(
         { ...defaultState, isPlaying: true },
         {
-          type: types.TOGGLE_PLAY_PAUSE,
+          type: types.TOGGLE_PLAY_PAUSE
         }
       )
     ).toEqual({
       ...defaultState,
-      isPlaying: false,
+      isPlaying: false
     });
   });
 
@@ -43,31 +43,31 @@ describe('reducer', () => {
     expect(
       reducer(defaultState, {
         type: types.SET_TEMPO,
-        tempo: 150,
+        tempo: 150
       })
     ).toEqual({
       ...defaultState,
-      tempo: 150,
+      tempo: 150
     });
 
     expect(
       reducer(defaultState, {
         type: types.SET_TEMPO,
-        tempo: 300,
+        tempo: 300
       })
     ).toEqual({
       ...defaultState,
-      tempo: 250,
+      tempo: 250
     });
 
     expect(
       reducer(defaultState, {
         type: types.SET_TEMPO,
-        tempo: -1,
+        tempo: -1
       })
     ).toEqual({
       ...defaultState,
-      tempo: 1,
+      tempo: 1
     });
   });
 
@@ -75,31 +75,31 @@ describe('reducer', () => {
     expect(
       reducer(defaultState, {
         type: types.SET_METER,
-        meter: 5,
+        meter: 5
       })
     ).toEqual({
       ...defaultState,
-      meter: 5,
+      meter: 5
     });
 
     expect(
       reducer(defaultState, {
         type: types.SET_METER,
-        meter: 14,
+        meter: 14
       })
     ).toEqual({
       ...defaultState,
-      meter: 13,
+      meter: 13
     });
 
     expect(
       reducer(defaultState, {
         type: types.SET_METER,
-        meter: 0,
+        meter: 0
       })
     ).toEqual({
       ...defaultState,
-      meter: 1,
+      meter: 1
     });
   });
 
@@ -107,31 +107,31 @@ describe('reducer', () => {
     expect(
       reducer(defaultState, {
         type: types.SET_MASTER_VOLUME,
-        masterVolume: 0.8,
+        masterVolume: 0.8
       })
     ).toEqual({
       ...defaultState,
-      masterVolume: 0.8,
+      masterVolume: 0.8
     });
 
     expect(
       reducer(defaultState, {
         type: types.SET_MASTER_VOLUME,
-        masterVolume: 1.1,
+        masterVolume: 1.1
       })
     ).toEqual({
       ...defaultState,
-      masterVolume: 1,
+      masterVolume: 1
     });
 
     expect(
       reducer(defaultState, {
         type: types.SET_MASTER_VOLUME,
-        masterVolume: -0.1,
+        masterVolume: -0.1
       })
     ).toEqual({
       ...defaultState,
-      masterVolume: 0,
+      masterVolume: 0
     });
   });
 
@@ -139,31 +139,31 @@ describe('reducer', () => {
     expect(
       reducer(defaultState, {
         type: types.SET_ACCENT_VOLUME,
-        accentVolume: 0.5,
+        accentVolume: 0.5
       })
     ).toEqual({
       ...defaultState,
-      accentVolume: 0.5,
+      accentVolume: 0.5
     });
 
     expect(
       reducer(defaultState, {
         type: types.SET_ACCENT_VOLUME,
-        accentVolume: 1.1,
+        accentVolume: 1.1
       })
     ).toEqual({
       ...defaultState,
-      accentVolume: 1,
+      accentVolume: 1
     });
 
     expect(
       reducer(defaultState, {
         type: types.SET_ACCENT_VOLUME,
-        accentVolume: -1,
+        accentVolume: -1
       })
     ).toEqual({
       ...defaultState,
-      accentVolume: 0,
+      accentVolume: 0
     });
   });
 
@@ -171,11 +171,11 @@ describe('reducer', () => {
     expect(
       reducer(defaultState, {
         type: types.SET_QUARTER_VOLUME,
-        quarterVolume: 0,
+        quarterVolume: 0
       })
     ).toEqual({
       ...defaultState,
-      quarterVolume: 0,
+      quarterVolume: 0
     });
   });
 
@@ -183,31 +183,31 @@ describe('reducer', () => {
     expect(
       reducer(defaultState, {
         type: types.SET_EIGTH_VOLUME,
-        eighthVolume: 0.4,
+        eighthVolume: 0.4
       })
     ).toEqual({
       ...defaultState,
-      eighthVolume: 0.4,
+      eighthVolume: 0.4
     });
 
     expect(
       reducer(defaultState, {
         type: types.SET_EIGTH_VOLUME,
-        eighthVolume: 1.2,
+        eighthVolume: 1.2
       })
     ).toEqual({
       ...defaultState,
-      eighthVolume: 1,
+      eighthVolume: 1
     });
 
     expect(
       reducer(defaultState, {
         type: types.SET_EIGTH_VOLUME,
-        eighthVolume: -0.4,
+        eighthVolume: -0.4
       })
     ).toEqual({
       ...defaultState,
-      eighthVolume: 0,
+      eighthVolume: 0
     });
   });
 
@@ -215,31 +215,31 @@ describe('reducer', () => {
     expect(
       reducer(defaultState, {
         type: types.SET_SIXTEENTH_VOLUME,
-        sixteenthVolume: 0.6,
+        sixteenthVolume: 0.6
       })
     ).toEqual({
       ...defaultState,
-      sixteenthVolume: 0.6,
+      sixteenthVolume: 0.6
     });
 
     expect(
       reducer(defaultState, {
         type: types.SET_SIXTEENTH_VOLUME,
-        sixteenthVolume: 1.1,
+        sixteenthVolume: 1.1
       })
     ).toEqual({
       ...defaultState,
-      sixteenthVolume: 1,
+      sixteenthVolume: 1
     });
 
     expect(
       reducer(defaultState, {
         type: types.SET_SIXTEENTH_VOLUME,
-        sixteenthVolume: -1.1,
+        sixteenthVolume: -1.1
       })
     ).toEqual({
       ...defaultState,
-      sixteenthVolume: 0,
+      sixteenthVolume: 0
     });
   });
 
@@ -247,31 +247,31 @@ describe('reducer', () => {
     expect(
       reducer(defaultState, {
         type: types.SET_TRIPLET_VOLUME,
-        tripletVolume: 0.3,
+        tripletVolume: 0.3
       })
     ).toEqual({
       ...defaultState,
-      tripletVolume: 0.3,
+      tripletVolume: 0.3
     });
 
     expect(
       reducer(defaultState, {
         type: types.SET_TRIPLET_VOLUME,
-        tripletVolume: 1.3,
+        tripletVolume: 1.3
       })
     ).toEqual({
       ...defaultState,
-      tripletVolume: 1,
+      tripletVolume: 1
     });
 
     expect(
       reducer(defaultState, {
         type: types.SET_TRIPLET_VOLUME,
-        tripletVolume: -0.3,
+        tripletVolume: -0.3
       })
     ).toEqual({
       ...defaultState,
-      tripletVolume: 0,
+      tripletVolume: 0
     });
   });
 });
