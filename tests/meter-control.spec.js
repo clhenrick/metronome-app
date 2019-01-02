@@ -9,7 +9,7 @@ configure({ adapter: new Adapter() });
 describe('MeterControl', () => {
   const props = {
     meter: 4,
-    handleChange: jest.fn(),
+    handleChange: jest.fn()
   };
   const wrapper = mount(<MeterControl {...props} />);
 

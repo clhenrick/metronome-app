@@ -10,7 +10,7 @@ configure({ adapter: new Adapter() });
 describe('PlayPauseBtn', () => {
   const props = {
     isPlaying: false,
-    handleClick: jest.fn(),
+    handleClick: jest.fn()
   };
   const wrapper = mount(<PlayPauseBtn {...props} />);
 

@@ -31,7 +31,7 @@ const MeterControl = ({ meter, handleChange }) => {
 
 MeterControl.propTypes = {
   handleChange: PropTypes.func.isRequired,
-  meter: PropTypes.number.isRequired,
+  meter: PropTypes.number.isRequired
 };
 
 export default MeterControl;

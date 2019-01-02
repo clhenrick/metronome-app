@@ -15,7 +15,7 @@ const PlayPauseBtn = ({ isPlaying, handleClick }) => (
 
 PlayPauseBtn.propTypes = {
   isPlaying: PropTypes.bool.isRequired,
-  handleClick: PropTypes.func.isRequired,
+  handleClick: PropTypes.func.isRequired
 };
 
 export default PlayPauseBtn;

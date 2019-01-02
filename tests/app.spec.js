@@ -40,7 +40,7 @@ describe('App', () => {
     quarterVolume: 0.7,
     eighthVolume: 0,
     sixteenthVolume: 0,
-    tripletVolume: 0,
+    tripletVolume: 0
   };
   const app = mount(<App {...props} />);
 

@@ -20,33 +20,32 @@
     "ecmaVersion": 6,
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,
-      "spread": true,
+      "spread": true
     }
   },
-  "plugins": [
-    "react",
-    "jsx-a11y",
-    "babel",
-    "prettier",
-    "jest"
-  ],
+  "plugins": ["react", "jsx-a11y", "babel", "prettier", "jest"],
   "rules": {
     "arrow-body-style": ["error", "as-needed"],
     "camelcase": 0,
-    "comma-dangle": 0,
+    "comma-dangle": ["error", "never"],
     "indent": [1, 2, { "SwitchCase": 1 }],
     "jsx-a11y/no-static-element-interactions": 0,
-    "import/no-extraneous-dependencies": ["error", {
-      "devDependencies": true,
-      "optionalDependencies": false,
-      "peerDependencies": false
-      }],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true,
+        "optionalDependencies": false,
+        "peerDependencies": false
+      }
+    ],
     "import/extensions": 0,
-    "prettier/prettier": ["error", {
-      "singleQuote": true,
-      "trailingComma": "es5",
-      "printWidth": 100,
-    }],
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "printWidth": 100
+      }
+    ],
     "no-param-reassign": 0,
     "no-underscore-dangle": 0,
     "react/jsx-filename-extension": 0,

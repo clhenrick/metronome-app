@@ -10,7 +10,7 @@ describe('IconWrapper', () => {
   const props = {
     fillColor: '#222',
     width: 40,
-    height: 40,
+    height: 40
   };
   const children = [<path key="a" />, <path key="b" />];
   const wrapper = mount(IconWrapper(props, children));
@@ -39,7 +39,7 @@ describe('Icons', () => {
   const props = {
     fillColor: 'magenta',
     width: 40,
-    height: 40,
+    height: 40
   };
   const arrowDown = mount(<ArrowDown {...props} />);
   const arrowUp = mount(<ArrowUp {...props} />);

@@ -10,7 +10,7 @@ import {
   setQuarterVolume,
   setEigthVolume,
   setSixteenthVolume,
-  setTripletVolume,
+  setTripletVolume
 } from './utils/metronome';
 import {
   TOGGLE_PLAY_PAUSE,
@@ -24,7 +24,7 @@ import {
   SET_TRIPLET_VOLUME,
   SAVE_APP_STATE_ACTIONS
 } from './constants';
-import {setSavedState} from "./utils/localstorage"
+import { setSavedState } from './utils/localstorage';
 
 // all Redux middleware will be exported within this array, aka the "middleware chain"
 const middleware = [];
@@ -44,7 +44,7 @@ export const metronomeMiddleware = store => next => action => {
     quarterVolume,
     eighthVolume,
     sixteenthVolume,
-    tripletVolume,
+    tripletVolume
   } = store.getState();
 
   switch (action.type) {
@@ -100,7 +100,7 @@ export const localStorageMiddleware = store => next => action => {
   }
 
   return result;
-}
+};
 
 // add the custom middleware to the middleware chain
 middleware.push(metronomeMiddleware);

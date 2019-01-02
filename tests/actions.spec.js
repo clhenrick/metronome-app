@@ -4,7 +4,7 @@ import * as types from '../src/constants';
 describe('actions', () => {
   it('should create an action to toggle play / pause', () => {
     const expectedAction = {
-      type: types.TOGGLE_PLAY_PAUSE,
+      type: types.TOGGLE_PLAY_PAUSE
     };
     expect(actions.togglePlayPause()).toEqual(expectedAction);
   });
@@ -13,7 +13,7 @@ describe('actions', () => {
     const tempo = 140;
     const expectedAction = {
       type: types.SET_TEMPO,
-      tempo,
+      tempo
     };
     expect(actions.setTempo(tempo)).toEqual(expectedAction);
   });
@@ -22,7 +22,7 @@ describe('actions', () => {
     const meter = 3;
     const expectedAction = {
       type: types.SET_METER,
-      meter,
+      meter
     };
     expect(actions.setMeter(meter)).toEqual(expectedAction);
   });
@@ -31,7 +31,7 @@ describe('actions', () => {
     const masterVolume = 0.8;
     const expectedAction = {
       type: types.SET_MASTER_VOLUME,
-      masterVolume,
+      masterVolume
     };
     expect(actions.setMasterVolume(masterVolume)).toEqual(expectedAction);
   });
@@ -40,7 +40,7 @@ describe('actions', () => {
     const accentVolume = 1;
     const expectedAction = {
       type: types.SET_ACCENT_VOLUME,
-      accentVolume,
+      accentVolume
     };
     expect(actions.setAccentVolume(accentVolume)).toEqual(expectedAction);
   });
@@ -49,7 +49,7 @@ describe('actions', () => {
     const quarterVolume = 0.7;
     const expectedAction = {
       type: types.SET_QUARTER_VOLUME,
-      quarterVolume,
+      quarterVolume
     };
     expect(actions.setQuarterVolume(quarterVolume)).toEqual(expectedAction);
   });
@@ -58,7 +58,7 @@ describe('actions', () => {
     const eighthVolume = 0.5;
     const expectedAction = {
       type: types.SET_EIGTH_VOLUME,
-      eighthVolume,
+      eighthVolume
     };
     expect(actions.setEigthVolume(eighthVolume)).toEqual(expectedAction);
   });
@@ -67,7 +67,7 @@ describe('actions', () => {
     const sixteenthVolume = 0.4;
     const expectedAction = {
       type: types.SET_SIXTEENTH_VOLUME,
-      sixteenthVolume,
+      sixteenthVolume
     };
     expect(actions.setSixteenthVolume(sixteenthVolume)).toEqual(expectedAction);
   });
@@ -76,7 +76,7 @@ describe('actions', () => {
     const tripletVolume = 0.2;
     const expectedAction = {
       type: types.SET_TRIPLET_VOLUME,
-      tripletVolume,
+      tripletVolume
     };
     expect(actions.setTripletVolume(tripletVolume)).toEqual(expectedAction);
   });
