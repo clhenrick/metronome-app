@@ -10,6 +10,7 @@ import {
   SET_EIGTH_VOLUME,
   SET_SIXTEENTH_VOLUME,
   SET_TRIPLET_VOLUME,
+  DEFAULT_IS_PLAYING,
   DEFAULT_TEMPO,
   DEFAULT_METER,
   DEFAULT_MASTER_VOLUME,
@@ -21,7 +22,7 @@ import {
 } from '../constants';
 
 export const defaultState = {
-  isPlaying: false,
+  isPlaying: DEFAULT_IS_PLAYING,
   tempo: DEFAULT_TEMPO,
   meter: DEFAULT_METER,
   masterVolume: DEFAULT_MASTER_VOLUME,

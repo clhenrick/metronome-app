@@ -23,6 +23,7 @@ export const SAVE_APP_STATE_ACTIONS = [
   SET_TRIPLET_VOLUME
 ];
 
+export const DEFAULT_IS_PLAYING = false;
 export const DEFAULT_TEMPO = 120;
 export const DEFAULT_METER = 4;
 export const DEFAULT_MASTER_VOLUME = 0.5;
