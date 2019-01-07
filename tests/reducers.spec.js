@@ -4,15 +4,15 @@ import * as types from '../src/constants';
 describe('reducer', () => {
   it('should return the initial state', () => {
     expect(reducer(undefined, {})).toEqual({
-      isPlaying: false,
-      tempo: 120.0,
-      meter: 4,
-      masterVolume: 0.5,
-      accentVolume: 1,
-      quarterVolume: 0.7,
-      eighthVolume: 0,
-      sixteenthVolume: 0,
-      tripletVolume: 0
+      isPlaying: types.DEFAULT_IS_PLAYING,
+      tempo: types.DEFAULT_TEMPO,
+      meter: types.DEFAULT_METER,
+      masterVolume: types.DEFAULT_MASTER_VOLUME,
+      accentVolume: types.DEFAULT_ACCENT_VOLUME,
+      quarterVolume: types.DEFAULT_QUARTER_VOLUME,
+      eighthVolume: types.DEFAULT_EIGTH_VOLUME,
+      sixteenthVolume: types.DEFAULT_SIXTEENTH_VOLUME,
+      tripletVolume: types.DEFAULT_TRIPLET_VOLUME
     });
   });
 

@@ -1,4 +1,5 @@
 import { applyMiddleware, createStore } from 'redux';
+import { getSavedState } from './utils/localstorage';
 
 import rootReducer from './reducers/';
 import middleware from './middleware';
@@ -18,5 +19,5 @@ function makeStore(initialState) {
   return store;
 }
 
-const store = makeStore();
+const store = makeStore(getSavedState());
 export default store;

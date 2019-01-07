@@ -8,7 +8,8 @@
   "license": "MIT",
   "private": true,
   "jest": {
-    "testURL": "http://localhost"
+    "testURL": "http://localhost",
+    "setupFiles": ["./src/utils/__mocks__/browserMocks.js"]
   },
   "scripts": {
     "start": "export NODE_ENV=development && webpack-dev-server --config webpack.config.dev.js",

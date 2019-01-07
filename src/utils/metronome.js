@@ -3,18 +3,24 @@
 // ported to ES6
 
 import Worker from './worker';
+import store from '../store';
 
 const timerWorker = new Worker(); // The Web Worker used to fire timer messages
 let audioContext = null;
 let currentTwelveletNote; // What note is currently last scheduled?
-let tempo = 120.0; // tempo (in beats per minute)
-let meter = 4;
-let masterVolume = 0.5;
-let accentVolume = 1;
-let quarterVolume = 0.75;
-let eighthVolume = 0;
-let sixteenthVolume = 0;
-let tripletVolume = 0;
+
+// NOTE: these values end up mirroring the redux state
+// the code in this module should be refactored so that these are pulled directly
+// from the redux store, using store.subscribe and store.getState
+// this would also allievate the need for the custom metronome middleware in middleware.js
+let tempo; // tempo (in beats per minute)
+let meter;
+let masterVolume;
+let accentVolume;
+let quarterVolume;
+let eighthVolume;
+let sixteenthVolume;
+let tripletVolume;
 
 // How frequently to call scheduling function (in milliseconds)
 const lookahead = 25.0;
@@ -142,7 +148,21 @@ export function play(isPlaying) {
   }
 }
 
+function setInitialValues() {
+  const initialState = store.getState();
+  tempo = initialState.tempo;
+  meter = initialState.meter;
+  masterVolume = initialState.masterVolume;
+  accentVolume = initialState.accentVolume;
+  quarterVolume = initialState.quarterVolume;
+  eighthVolume = initialState.eighthVolume;
+  sixteenthVolume = initialState.sixteenthVolume;
+  tripletVolume = initialState.tripletVolume;
+}
+
 export function init() {
+  setInitialValues();
+
   // hack so that AudioContext works on iOS
   // code credit: https://gist.github.com/laziel/7aefabe99ee57b16081c
   let usingWebAudio = true;
