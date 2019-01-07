@@ -1,6 +1,5 @@
 import * as types from '../src/constants';
 import { metronomeMiddleware, localStorageMiddleware } from '../src/middleware';
-import { SAVE_APP_STATE_ACTIONS } from '../src/constants';
 
 jest.mock('../src/utils/worker.js');
 jest.mock('../src/utils/metronome.js');
@@ -82,7 +81,7 @@ describe('middleware', () => {
 
     it('should call setSavedState with whitelisted actions', () => {
       const { invoke } = createLocalStorageReduxMock();
-      SAVE_APP_STATE_ACTIONS.forEach(actionType => {
+      types.SAVE_APP_STATE_ACTIONS.forEach(actionType => {
         const action = { type: actionType };
         invoke(action);
         expect(localstorage.setSavedState).toHaveBeenCalled();
