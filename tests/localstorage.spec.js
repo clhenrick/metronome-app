@@ -14,11 +14,12 @@ describe('localstorage module', () => {
   });
 
   it('should return a non-default state when state has been previously saved', () => {
-    setSavedState({ tempo: 60 });
-    const state = getSavedState();
-    expect(state).toEqual({
-      ...defaultState,
-      ...state
+    const stateToSave = { ...defaultState, tempo: 60, meter: 3 };
+    setSavedState(stateToSave);
+    const stateRetrieved = getSavedState();
+    expect(stateToSave).toEqual({
+      isPlaying: false,
+      ...stateRetrieved
     });
   });
 
