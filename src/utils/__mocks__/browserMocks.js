@@ -20,6 +20,6 @@ class LocalStorageMock {
   }
 }
 
-global.localStorage = new LocalStorageMock();
-
-export default LocalStorageMock;
+Object.defineProperty(window, 'localStorage', {
+  value: new LocalStorageMock()
+});
