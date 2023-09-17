@@ -24,10 +24,12 @@ class App extends Component {
   componentDidMount() {
     init();
     this.bindListeners();
+    window.addEventListener('keydown', this.handleKeyDown);
   }
 
   componentWillUnmount() {
     this.unbindListeners();
+    window.removeEventListener('keydown', this.handleKeyDown);
   }
 
   bindListeners = () => {
@@ -40,6 +42,23 @@ class App extends Component {
 
   createAppRef = _ => {
     this.app = _;
+  };
+
+  handleKeyDown = event => {
+    const { key } = event;
+    let flag = false;
+    switch (key) {
+      case ' ': {
+        this.props.togglePlayPause();
+        flag = true;
+        break;
+      }
+      default:
+        break;
+    }
+    if (flag) {
+      event.preventDefault();
+    }
   };
 
   render() {
