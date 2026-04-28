@@ -6,8 +6,8 @@
     "moduleResolution": "bundler",
     "jsx": "react-jsx",
     "strict": false,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": ["vitest/globals", "@testing-library/jest-dom"]
   },
-  "include": ["src"],
-  "exclude": ["src/utils/__mocks__"]
+  "include": ["src", "tests"]
 }

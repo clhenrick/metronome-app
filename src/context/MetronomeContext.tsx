@@ -30,7 +30,7 @@ const clampTempo = clamp(1, 250);
 const clampMeter = clamp(1, 13);
 const clampVolume = clamp(0, 1);
 
-function reducer(state: AppState, action: Action): AppState {
+export function reducer(state: AppState, action: Action): AppState {
   switch (action.type) {
     case 'TOGGLE_PLAY_PAUSE':
       return { ...state, isPlaying: !state.isPlaying };
