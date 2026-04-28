@@ -1,3 +1,4 @@
+// @ts-nocheck - patches legacy Web Audio API prefixes; slated for removal in Phase 7
 /* eslint-disable */
 /* Copyright 2013 Chris Wilson
 
