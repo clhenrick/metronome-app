@@ -2,7 +2,7 @@
 // https://github.com/scottwhudson/metronome
 // ported to ES6
 
-import Worker from './worker';
+import Worker from './worker?worker';
 import store from '../store';
 
 const timerWorker = new Worker(); // The Web Worker used to fire timer messages
