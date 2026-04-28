@@ -892,6 +892,32 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/prop-types@npm:*":
+  version: 15.7.15
+  resolution: "@types/prop-types@npm:15.7.15"
+  checksum: 10c0/b59aad1ad19bf1733cf524fd4e618196c6c7690f48ee70a327eb450a42aab8e8a063fbe59ca0a5701aebe2d92d582292c0fb845ea57474f6a15f6994b0e260b2
+  languageName: node
+  linkType: hard
+
+"@types/react-dom@npm:^18":
+  version: 18.3.7
+  resolution: "@types/react-dom@npm:18.3.7"
+  peerDependencies:
+    "@types/react": ^18.0.0
+  checksum: 10c0/8bd309e2c3d1604a28a736a24f96cbadf6c05d5288cfef8883b74f4054c961b6b3a5e997fd5686e492be903c8f3380dba5ec017eff3906b1256529cd2d39603e
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:^18":
+  version: 18.3.28
+  resolution: "@types/react@npm:18.3.28"
+  dependencies:
+    "@types/prop-types": "npm:*"
+    csstype: "npm:^3.2.2"
+  checksum: 10c0/683e19cd12b5c691215529af2e32b5ffbaccae3bf0ba93bfafa0e460e8dfee18423afed568be2b8eadf4b837c3749dd296a4f64e2d79f68fa66962c05f5af661
+  languageName: node
+  linkType: hard
+
 "@vitejs/plugin-react@npm:^4.5.1":
   version: 4.7.0
   resolution: "@vitejs/plugin-react@npm:4.7.0"
@@ -2050,6 +2076,13 @@ __metadata:
   dependencies:
     cssom: "npm:0.3.x"
   checksum: 10c0/80dab0493f36b0aa4eab357cea16c205f1fe5fdd5dce53aa9e290e4dc94ee03e53735bc96517194fb209a94ec977440c2fea8a982fcd27cf455e5377b58dfe32
+  languageName: node
+  linkType: hard
+
+"csstype@npm:^3.2.2":
+  version: 3.2.3
+  resolution: "csstype@npm:3.2.3"
+  checksum: 10c0/cd29c51e70fa822f1cecd8641a1445bed7063697469d35633b516e60fe8c1bde04b08f6c5b6022136bb669b64c63d4173af54864510fbb4ee23281801841a3ce
   languageName: node
   linkType: hard
 
@@ -5081,6 +5114,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "metronome-app@workspace:."
   dependencies:
+    "@types/react": "npm:^18"
+    "@types/react-dom": "npm:^18"
     "@vitejs/plugin-react": "npm:^4.5.1"
     enzyme: "npm:^3.3.0"
     enzyme-adapter-react-16: "npm:^1.1.1"
@@ -5099,8 +5134,8 @@ __metadata:
     prettier-eslint: "npm:^8.7.0"
     prettier-eslint-cli: "npm:^4.7.1"
     prop-types: "npm:^15.6.0"
-    react: "npm:^16.2.0"
-    react-dom: "npm:^16.2.0"
+    react: "npm:^18"
+    react-dom: "npm:^18"
     react-rangeslider: "npm:^2.2.0"
     react-redux: "npm:^5.0.6"
     react-test-renderer: "npm:^16.2.0"
@@ -5109,6 +5144,7 @@ __metadata:
     sass: "npm:^1.87.0"
     sinon: "npm:^4.2.2"
     skeleton-scss: "npm:^2.0.4"
+    typescript: "npm:^6.0.3"
     vite: "npm:^6.3.4"
   languageName: unknown
   linkType: soft
@@ -6260,17 +6296,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:^16.2.0":
-  version: 16.7.0
-  resolution: "react-dom@npm:16.7.0"
+"react-dom@npm:^18":
+  version: 18.3.1
+  resolution: "react-dom@npm:18.3.1"
   dependencies:
     loose-envify: "npm:^1.1.0"
-    object-assign: "npm:^4.1.1"
-    prop-types: "npm:^15.6.2"
-    scheduler: "npm:^0.12.0"
+    scheduler: "npm:^0.23.2"
   peerDependencies:
-    react: ^16.0.0
-  checksum: 10c0/7a45440caa03f8d455bf73328166caf313a0055467a399391e085b94dd41cd95c32c58f666f0d65ea21b80bbe2a1dc598b08022d1eb7e772c1f2dcc0d00d57de
+    react: ^18.3.1
+  checksum: 10c0/a752496c1941f958f2e8ac56239172296fcddce1365ce45222d04a1947e0cc5547df3e8447f855a81d6d39f008d7c32eab43db3712077f09e3f67c4874973e85
   languageName: node
   linkType: hard
 
@@ -6339,15 +6373,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:^16.2.0":
-  version: 16.7.0
-  resolution: "react@npm:16.7.0"
+"react@npm:^18":
+  version: 18.3.1
+  resolution: "react@npm:18.3.1"
   dependencies:
     loose-envify: "npm:^1.1.0"
-    object-assign: "npm:^4.1.1"
-    prop-types: "npm:^15.6.2"
-    scheduler: "npm:^0.12.0"
-  checksum: 10c0/694ad9f0743abacf3963fa443b5be331ee3ca9e76bc848f4bcc7f1d0bd567b0f40c3b729f6b5da045dac29bb6e0e56e523e47444abf3371d624c0157ec78aad8
+  checksum: 10c0/283e8c5efcf37802c9d1ce767f302dd569dd97a70d9bb8c7be79a789b9902451e0d16334b05d73299b20f048cbc3c7d288bbbde10b701fa194e2089c237dbea3
   languageName: node
   linkType: hard
 
@@ -6937,6 +6968,15 @@ __metadata:
     loose-envify: "npm:^1.1.0"
     object-assign: "npm:^4.1.1"
   checksum: 10c0/6a8894b3c91e4517aa53e4e40017e62ba68091f6882f1fb0c496015b99e15350e2f0afa8af4a1eb52e8b19bce4dadf05867482812c3b1e27b106427069023db7
+  languageName: node
+  linkType: hard
+
+"scheduler@npm:^0.23.2":
+  version: 0.23.2
+  resolution: "scheduler@npm:0.23.2"
+  dependencies:
+    loose-envify: "npm:^1.1.0"
+  checksum: 10c0/26383305e249651d4c58e6705d5f8425f153211aef95f15161c151f7b8de885f24751b377e4a0b3dd42cce09aad3f87a61dab7636859c0d89b7daf1a1e2a5c78
   languageName: node
   linkType: hard
 
@@ -7673,6 +7713,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"typescript@npm:^6.0.3":
+  version: 6.0.3
+  resolution: "typescript@npm:6.0.3"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10c0/4a25ff5045b984370f48f196b3a0120779b1b343d40b9a68d114ea5e5fff099809b2bb777576991a63a5cd59cf7bffd96ff6fe10afcefbcb8bd6fb96ad4b6606
+  languageName: node
+  linkType: hard
+
 "typescript@patch:typescript@npm%3A^2.5.1#optional!builtin<compat/typescript>":
   version: 2.9.2
   resolution: "typescript@patch:typescript@npm%3A2.9.2#optional!builtin<compat/typescript>::version=2.9.2&hash=3bafbf"
@@ -7680,6 +7730,16 @@ __metadata:
     tsc: ./bin/tsc
     tsserver: ./bin/tsserver
   checksum: 10c0/bcddd68de2b7732d2b39b3bfe1e95c56fafaa24f5db38bd27af8f98c646aa90094041353fb1a144dabf71655e04f5ba646c55e6391e9c09c429097ed837c07a6
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@npm%3A^6.0.3#optional!builtin<compat/typescript>":
+  version: 6.0.3
+  resolution: "typescript@patch:typescript@npm%3A6.0.3#optional!builtin<compat/typescript>::version=6.0.3&hash=5786d5"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10c0/2f25c74e65663c248fa1ade2b8459d9ce5372ff9dad07067310f132966ebec1d93f6c42f0baf77a6b6a7a91460463f708e6887013aaade22111037457c6b25df
   languageName: node
   linkType: hard
 

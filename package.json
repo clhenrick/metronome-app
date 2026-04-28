@@ -23,6 +23,8 @@
     ]
   },
   "devDependencies": {
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
     "@vitejs/plugin-react": "^4.5.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
@@ -43,13 +45,14 @@
     "redux-logger": "^3.0.6",
     "sass": "^1.87.0",
     "sinon": "^4.2.2",
+    "typescript": "^6.0.3",
     "vite": "^6.3.4"
   },
   "dependencies": {
     "normalize.css": "^8.0.1",
     "prop-types": "^15.6.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react": "^18",
+    "react-dom": "^18",
     "react-rangeslider": "^2.2.0",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
