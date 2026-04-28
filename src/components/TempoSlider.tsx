@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Slider from 'react-rangeslider';
 
 interface TempoSliderProps {
   handleChange: (value: number) => void;
@@ -29,14 +28,12 @@ class TempoSlider extends Component<TempoSliderProps> {
         <h3 className="title">Tempo</h3>
         <div className="tempo-slider__controls">
           <button onClick={() => this.handleClick('decrement')}>–</button>
-          <Slider
-            className="rangeslider__tempo"
-            min={0}
+          <input
+            type="range"
+            min={1}
             max={250}
-            orientation="horizontal"
-            onChange={(value: number) => handleChange(value)}
-            tooltip={false}
             value={tempo}
+            onChange={(e) => handleChange(parseInt(e.target.value, 10))}
           />
           <button onClick={() => this.handleClick('increment')}>+</button>
         </div>

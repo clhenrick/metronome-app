@@ -1,4 +1,4 @@
-import { defaultState } from '../reducers';
+import { defaultState } from '../types';
 import { AppState } from '../types';
 
 const storageKey = 'metronome-app-state';

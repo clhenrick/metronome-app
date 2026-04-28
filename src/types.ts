@@ -10,16 +10,14 @@ export interface AppState {
   tripletVolume: number;
 }
 
-export interface AppDispatch {
-  togglePlayPause: () => void;
-  setTempo: (value: number) => void;
-  setMeter: (value: number) => void;
-  setMasterVolume: (value: number) => void;
-  setAccentVolume: (value: number) => void;
-  setQuarterVolume: (value: number) => void;
-  setEigthVolume: (value: number) => void;
-  setSixteenthVolume: (value: number) => void;
-  setTripletVolume: (value: number) => void;
-}
-
-export type AppProps = AppState & AppDispatch;
+export const defaultState: AppState = {
+  isPlaying: false,
+  tempo: 120,
+  meter: 4,
+  masterVolume: 0.5,
+  accentVolume: 1,
+  quarterVolume: 0.75,
+  eighthVolume: 0,
+  sixteenthVolume: 0,
+  tripletVolume: 0,
+};

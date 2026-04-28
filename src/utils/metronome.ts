@@ -3,24 +3,20 @@
 // ported to ES6
 
 import Worker from './worker?worker';
-import store from '../store';
+import { AppState } from '../types';
 
 const timerWorker = new Worker(); // The Web Worker used to fire timer messages
-let audioContext = null;
-let currentTwelveletNote; // What note is currently last scheduled?
+let audioContext: AudioContext | null = null;
+let currentTwelveletNote: number; // What note is currently last scheduled?
 
-// NOTE: these values end up mirroring the redux state
-// the code in this module should be refactored so that these are pulled directly
-// from the redux store, using store.subscribe and store.getState
-// this would also allievate the need for the custom metronome middleware in middleware.js
-let tempo; // tempo (in beats per minute)
-let meter;
-let masterVolume;
-let accentVolume;
-let quarterVolume;
-let eighthVolume;
-let sixteenthVolume;
-let tripletVolume;
+let tempo: number;
+let meter: number;
+let masterVolume: number;
+let accentVolume: number;
+let quarterVolume: number;
+let eighthVolume: number;
+let sixteenthVolume: number;
+let tripletVolume: number;
 
 // How frequently to call scheduling function (in milliseconds)
 const lookahead = 25.0;
@@ -37,37 +33,37 @@ const noteLength = 0.05;
 
 // the notes that have been put into the web audio,
 // and may or may not have played yet. {note, time}
-const notesInQueue = [];
+const notesInQueue: { note: number; time: number }[] = [];
 
-export function setTempo(_) {
+export function setTempo(_: number) {
   tempo = _;
 }
 
-export function setMeter(_) {
+export function setMeter(_: number) {
   meter = _;
 }
 
-export function setMasterVolume(_) {
+export function setMasterVolume(_: number) {
   masterVolume = _;
 }
 
-export function setAccentVolume(_) {
+export function setAccentVolume(_: number) {
   accentVolume = _;
 }
 
-export function setQuarterVolume(_) {
+export function setQuarterVolume(_: number) {
   quarterVolume = _;
 }
 
-export function setEigthVolume(_) {
+export function setEigthVolume(_: number) {
   eighthVolume = _;
 }
 
-export function setSixteenthVolume(_) {
+export function setSixteenthVolume(_: number) {
   sixteenthVolume = _;
 }
 
-export function setTripletVolume(_) {
+export function setTripletVolume(_: number) {
   tripletVolume = _;
 }
 
@@ -86,20 +82,20 @@ function nextTwelvelet() {
   }
 }
 
-function calcVolume(beatVolume) {
+function calcVolume(beatVolume: number) {
   return beatVolume * masterVolume;
 }
 
-function scheduleNote(beatNumber, time) {
+function scheduleNote(beatNumber: number, time: number) {
   // push the note on the queue, even if we're not playing.
   notesInQueue.push({ note: beatNumber, time });
 
   // create oscillator & gainNode & connect them to the context destination
-  const osc = audioContext.createOscillator();
-  const gainNode = audioContext.createGain();
+  const osc = audioContext!.createOscillator();
+  const gainNode = audioContext!.createGain();
 
   osc.connect(gainNode);
-  gainNode.connect(audioContext.destination);
+  gainNode.connect(audioContext!.destination);
 
   if (beatNumber % maxBeats() === 0) {
     if (accentVolume > 0.25) {
@@ -132,24 +128,23 @@ function scheduleNote(beatNumber, time) {
 }
 
 function scheduler() {
-  while (nextNoteTime < audioContext.currentTime + scheduleAheadTime) {
+  while (nextNoteTime < audioContext!.currentTime + scheduleAheadTime) {
     scheduleNote(currentTwelveletNote, nextNoteTime);
     nextTwelvelet();
   }
 }
 
-export function play(isPlaying) {
+export function play(isPlaying: boolean) {
   if (isPlaying) {
     currentTwelveletNote = 0;
-    nextNoteTime = audioContext.currentTime;
+    nextNoteTime = audioContext!.currentTime;
     timerWorker.postMessage('start');
   } else {
     timerWorker.postMessage('stop');
   }
 }
 
-function setInitialValues() {
-  const initialState = store.getState();
+export function init(initialState: AppState) {
   tempo = initialState.tempo;
   meter = initialState.meter;
   masterVolume = initialState.masterVolume;
@@ -158,10 +153,6 @@ function setInitialValues() {
   eighthVolume = initialState.eighthVolume;
   sixteenthVolume = initialState.sixteenthVolume;
   tripletVolume = initialState.tripletVolume;
-}
-
-export function init() {
-  setInitialValues();
 
   // hack so that AudioContext works on iOS
   // code credit: https://gist.github.com/laziel/7aefabe99ee57b16081c
@@ -178,12 +169,12 @@ export function init() {
   }
 
   // context state at this time is `undefined` in iOS8 Safari
-  if (usingWebAudio && audioContext.state === 'suspended') {
+  if (usingWebAudio && audioContext!.state === 'suspended') {
     const resume = () => {
-      audioContext.resume();
+      audioContext!.resume();
 
       setTimeout(() => {
-        if (audioContext.state === 'running') {
+        if (audioContext!.state === 'running') {
           document.body.removeEventListener('touchend', resume, false);
         }
       }, 0);
@@ -192,7 +183,7 @@ export function init() {
     document.body.addEventListener('touchend', resume, false);
   }
 
-  timerWorker.onmessage = e => {
+  timerWorker.onmessage = (e) => {
     if (e.data === 'tick') {
       scheduler();
     } else {

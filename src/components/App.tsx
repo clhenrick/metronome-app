@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import { useEffect, useRef } from 'react';
 
-import { init } from '../utils/metronome';
-import { AppProps } from '../types';
+import { useMetronome } from '../context/MetronomeContext';
+import preventDoubleTapZoom from '../utils/helpers';
 
 import MeterControl from './MeterControl';
 import MeterDisplay from './MeterDisplay';
@@ -9,52 +9,35 @@ import TempoDisplay from './TempoDisplay';
 import TempoSlider from './TempoSlider';
 import PlayPauseBtn from './PlayPauseBtn';
 import VolumeControls from './VolumeControls';
-import preventDoubleTapZoom from '../utils/helpers';
 
-class App extends Component<AppProps> {
-  app: HTMLDivElement | null = null;
+function App() {
+  const appRef = useRef<HTMLDivElement | null>(null);
+  const { isPlaying, meter, setMeter, setTempo, tempo, togglePlayPause } = useMetronome();
 
-  componentDidMount() {
-    init();
-    this.bindListeners();
-  }
+  useEffect(() => {
+    const el = appRef.current;
+    if (!el) return;
+    el.addEventListener('touchstart', preventDoubleTapZoom);
+    return () => el.removeEventListener('touchstart', preventDoubleTapZoom);
+  }, []);
 
-  componentWillUnmount() {
-    this.unbindListeners();
-  }
-
-  bindListeners = () => {
-    this.app?.addEventListener('touchstart', preventDoubleTapZoom);
-  };
-
-  unbindListeners = () => {
-    this.app?.removeEventListener('touchstart', preventDoubleTapZoom);
-  };
-
-  createAppRef = (el: HTMLDivElement | null) => {
-    this.app = el;
-  };
-
-  render() {
-    const { isPlaying, meter, setMeter, setTempo, tempo, togglePlayPause } = this.props;
-    return (
-      <div className="App" ref={this.createAppRef}>
-        <div className="top-controls-panel">
-          <TempoDisplay tempo={tempo} />
-          <PlayPauseBtn isPlaying={isPlaying} handleClick={togglePlayPause} />
-        </div>
-        <TempoSlider handleChange={setTempo} tempo={tempo} />
-        <div className="meter-panel">
-          <h3 className="title">Meter</h3>
-          <div>
-            <MeterDisplay meter={meter} />
-            <MeterControl handleChange={setMeter} meter={meter} />
-          </div>
-        </div>
-        <VolumeControls {...this.props} />
+  return (
+    <div className="App" ref={appRef}>
+      <div className="top-controls-panel">
+        <TempoDisplay tempo={tempo} />
+        <PlayPauseBtn isPlaying={isPlaying} handleClick={togglePlayPause} />
       </div>
-    );
-  }
+      <TempoSlider handleChange={setTempo} tempo={tempo} />
+      <div className="meter-panel">
+        <h3 className="title">Meter</h3>
+        <div>
+          <MeterDisplay meter={meter} />
+          <MeterControl handleChange={setMeter} meter={meter} />
+        </div>
+      </div>
+      <VolumeControls />
+    </div>
+  );
 }
 
 export default App;

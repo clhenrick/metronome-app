@@ -45,32 +45,34 @@ button {
   }
 }
 
-// override react-rangeslider styles
-.rangeslider,
-.rangeslider.rangeslider-horizontal {
-  border-radius: 0;
-  box-shadow: none;
+// native range input styles
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  width: 100%;
   border: 1px solid $magenta;
   background-color: $white;
-  height: 8px;
+  border-radius: 0;
+  cursor: pointer;
 
-  .rangeslider__fill {
-    background-color: $magenta;
-    border-radius: 0;
-    box-shadow: none;
-  }
-
-  .rangeslider__handle {
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
     border: 2px solid $magenta;
-    box-shadow: none;
-
-    &::after {
-      // remove inner circle in handle
-      content: initial;
-      box-shadow: none;
-    }
+    background-color: $white;
+    cursor: pointer;
   }
 
-  .rangeslider__handle-tooltip {
+  &::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid $magenta;
+    background-color: $white;
+    cursor: pointer;
   }
 }

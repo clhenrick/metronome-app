@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Slider from 'react-rangeslider';
 
 interface VolumeSliderProps {
   handleChange: (value: number) => void;
@@ -13,8 +12,8 @@ class VolumeSlider extends Component<VolumeSliderProps> {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(value: number) {
-    this.props.handleChange(value);
+  handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+    this.props.handleChange(parseInt(e.target.value, 10) / 100);
   }
 
   render() {
@@ -22,14 +21,13 @@ class VolumeSlider extends Component<VolumeSliderProps> {
     return (
       <div className="VolumeSlider">
         <h6>{title}</h6>
-        <Slider
+        <input
+          type="range"
           min={0}
-          max={1}
-          orientation="horizontal"
+          max={100}
+          step={1}
+          value={Math.round(volume * 100)}
           onChange={this.handleChange}
-          step={0.01}
-          tooltip={false}
-          value={volume}
         />
       </div>
     );
