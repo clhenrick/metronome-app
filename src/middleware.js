@@ -106,7 +106,7 @@ export const localStorageMiddleware = store => next => action => {
 middleware.push(metronomeMiddleware);
 middleware.push(localStorageMiddleware);
 
-if (typeof window !== 'undefined' && process.env.NODE_ENV !== 'production') {
+if (typeof window !== 'undefined' && import.meta.env.DEV) {
   // redux-logger only works in a browser environment
   middleware.push(logger);
 }
