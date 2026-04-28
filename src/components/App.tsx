@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import { init } from '../utils/metronome';
+import { AppProps } from '../types';
 
 import MeterControl from './MeterControl';
 import MeterDisplay from './MeterDisplay';
@@ -11,15 +11,8 @@ import PlayPauseBtn from './PlayPauseBtn';
 import VolumeControls from './VolumeControls';
 import preventDoubleTapZoom from '../utils/helpers';
 
-class App extends Component {
-  static propTypes = {
-    meter: PropTypes.number.isRequired,
-    setMeter: PropTypes.func.isRequired,
-    setTempo: PropTypes.func.isRequired,
-    tempo: PropTypes.number.isRequired,
-    togglePlayPause: PropTypes.func.isRequired,
-    isPlaying: PropTypes.bool.isRequired
-  };
+class App extends Component<AppProps> {
+  app: HTMLDivElement | null = null;
 
   componentDidMount() {
     init();
@@ -31,15 +24,15 @@ class App extends Component {
   }
 
   bindListeners = () => {
-    this.app.addEventListener('touchstart', preventDoubleTapZoom);
+    this.app?.addEventListener('touchstart', preventDoubleTapZoom);
   };
 
   unbindListeners = () => {
-    this.app.removeEventListener('touchstart', preventDoubleTapZoom);
+    this.app?.removeEventListener('touchstart', preventDoubleTapZoom);
   };
 
-  createAppRef = _ => {
-    this.app = _;
+  createAppRef = (el: HTMLDivElement | null) => {
+    this.app = el;
   };
 
   render() {

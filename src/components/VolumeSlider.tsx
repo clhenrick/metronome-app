@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import Slider from 'react-rangeslider';
 
-class VolumeSlider extends Component {
-  static propTypes = {
-    handleChange: PropTypes.func.isRequired,
-    title: PropTypes.string.isRequired,
-    volume: PropTypes.number.isRequired
-  };
+interface VolumeSliderProps {
+  handleChange: (value: number) => void;
+  title: string;
+  volume: number;
+}
 
-  constructor(props) {
+class VolumeSlider extends Component<VolumeSliderProps> {
+  constructor(props: VolumeSliderProps) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(value) {
+  handleChange(value: number) {
     this.props.handleChange(value);
   }
 

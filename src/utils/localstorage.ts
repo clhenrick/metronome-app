@@ -1,35 +1,33 @@
 import { defaultState } from '../reducers';
+import { AppState } from '../types';
 
 const storageKey = 'metronome-app-state';
 
-export function getSavedState() {
+export function getSavedState(): AppState {
   const storage = window.localStorage;
 
   if (!storage) {
     return defaultState;
   }
 
-  let state = storage.getItem(storageKey);
+  const raw = storage.getItem(storageKey);
 
-  if (state) {
-    state = JSON.parse(state);
-    state = {
-      ...defaultState,
-      ...state
-    };
+  if (raw) {
+    const parsed = JSON.parse(raw);
+    return { ...defaultState, ...parsed };
   }
 
-  return state || defaultState;
+  return defaultState;
 }
 
-export function setSavedState(state) {
+export function setSavedState(state: AppState): void {
   const storage = window.localStorage;
 
   if (!storage) {
     return;
   }
 
-  // ignore the isPlaying boolean when saving app state
+  // isPlaying is not persisted — it always starts as false
   const { isPlaying, ...rest } = state;
 
   storage.setItem(storageKey, JSON.stringify(rest));

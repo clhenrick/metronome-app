@@ -1,10 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import { ArrowDown, ArrowUp } from './Icons';
 
-const MeterControl = ({ meter, handleChange }) => {
-  function handleClick(action) {
+interface MeterControlProps {
+  handleChange: (value: number) => void;
+  meter: number;
+}
+
+const MeterControl = ({ meter, handleChange }: MeterControlProps) => {
+  function handleClick(action: string) {
     switch (action) {
       case 'increment':
         handleChange(meter + 1);
@@ -27,11 +31,6 @@ const MeterControl = ({ meter, handleChange }) => {
       </button>
     </div>
   );
-};
-
-MeterControl.propTypes = {
-  handleChange: PropTypes.func.isRequired,
-  meter: PropTypes.number.isRequired
 };
 
 export default MeterControl;

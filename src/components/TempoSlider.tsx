@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import Slider from 'react-rangeslider';
 
-class TempoSlider extends Component {
-  static propTypes = {
-    handleChange: PropTypes.func.isRequired,
-    tempo: PropTypes.number.isRequired
-  };
+interface TempoSliderProps {
+  handleChange: (value: number) => void;
+  tempo: number;
+}
 
-  handleClick(value) {
+class TempoSlider extends Component<TempoSliderProps> {
+  handleClick(value: string) {
     const { handleChange, tempo } = this.props;
 
     switch (value) {
@@ -35,7 +34,7 @@ class TempoSlider extends Component {
             min={0}
             max={250}
             orientation="horizontal"
-            onChange={value => handleChange(value)}
+            onChange={(value: number) => handleChange(value)}
             tooltip={false}
             value={tempo}
           />

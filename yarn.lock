@@ -5133,7 +5133,6 @@ __metadata:
     prettier: "npm:^1.9.2"
     prettier-eslint: "npm:^8.7.0"
     prettier-eslint-cli: "npm:^4.7.1"
-    prop-types: "npm:^15.6.0"
     react: "npm:^18"
     react-dom: "npm:^18"
     react-rangeslider: "npm:^2.2.0"
@@ -6193,7 +6192,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.6.0, prop-types@npm:^15.6.1, prop-types@npm:^15.6.2":
+"prop-types@npm:^15.6.1, prop-types@npm:^15.6.2":
   version: 15.6.2
   resolution: "prop-types@npm:15.6.2"
   dependencies:
