@@ -1,8 +1,7 @@
-/* eslint-disable */
 let timerID = null;
 let interval = 100;
 
-self.onmessage = e => {
+self.onmessage = (e) => {
   if (e.data === 'start') {
     console.log('starting');
     timerID = setInterval(() => {

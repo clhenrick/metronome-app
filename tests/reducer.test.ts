@@ -134,12 +134,10 @@ describe('reducer', () => {
       ...defaultState,
       sixteenthVolume: 1,
     });
-    expect(reducer(defaultState, { type: 'SET_SIXTEENTH_VOLUME', sixteenthVolume: -1.1 })).toEqual(
-      {
-        ...defaultState,
-        sixteenthVolume: 0,
-      }
-    );
+    expect(reducer(defaultState, { type: 'SET_SIXTEENTH_VOLUME', sixteenthVolume: -1.1 })).toEqual({
+      ...defaultState,
+      sixteenthVolume: 0,
+    });
   });
 
   it('handles SET_TRIPLET_VOLUME with clamping', () => {

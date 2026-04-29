@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 interface TempoSliderProps {
   handleChange: (value: number) => void;

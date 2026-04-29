@@ -19,7 +19,7 @@ const renderApp = () =>
   render(
     <MetronomeProvider>
       <App />
-    </MetronomeProvider>
+    </MetronomeProvider>,
   );
 
 describe('App', () => {

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { ChangeEvent, Component } from 'react';
 
 interface VolumeSliderProps {
   handleChange: (value: number) => void;
@@ -12,7 +12,7 @@ class VolumeSlider extends Component<VolumeSliderProps> {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+  handleChange(e: ChangeEvent<HTMLInputElement>) {
     this.props.handleChange(parseInt(e.target.value, 10) / 100);
   }
 

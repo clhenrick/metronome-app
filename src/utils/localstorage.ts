@@ -28,7 +28,7 @@ export function setSavedState(state: AppState): void {
   }
 
   // isPlaying is not persisted — it always starts as false
-  const { isPlaying, ...rest } = state;
+  const { isPlaying: _isPlaying, ...rest } = state;
 
   storage.setItem(storageKey, JSON.stringify(rest));
 }

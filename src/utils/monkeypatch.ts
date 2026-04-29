@@ -49,7 +49,7 @@ and string types for AudioPannerNode.panningModel, AudioPannerNode.distanceModel
 BiquadFilterNode.type and OscillatorNode.type.
 
 */
-(function(global, exports, perf) {
+(function (global, exports, perf) {
   'use strict';
 
   function fixSetTarget(param) {
@@ -72,14 +72,14 @@ BiquadFilterNode.type and OscillatorNode.type.
       AudioContext.prototype.createPeriodicWave = AudioContext.prototype.createWaveTable;
 
     AudioContext.prototype.internal_createGain = AudioContext.prototype.createGain;
-    AudioContext.prototype.createGain = function() {
+    AudioContext.prototype.createGain = function () {
       var node = this.internal_createGain();
       fixSetTarget(node.gain);
       return node;
     };
 
     AudioContext.prototype.internal_createDelay = AudioContext.prototype.createDelay;
-    AudioContext.prototype.createDelay = function(maxDelayTime) {
+    AudioContext.prototype.createDelay = function (maxDelayTime) {
       var node = maxDelayTime
         ? this.internal_createDelay(maxDelayTime)
         : this.internal_createDelay();
@@ -88,27 +88,27 @@ BiquadFilterNode.type and OscillatorNode.type.
     };
 
     AudioContext.prototype.internal_createBufferSource = AudioContext.prototype.createBufferSource;
-    AudioContext.prototype.createBufferSource = function() {
+    AudioContext.prototype.createBufferSource = function () {
       var node = this.internal_createBufferSource();
       if (!node.start) {
-        node.start = function(when, offset, duration) {
+        node.start = function (when, offset, duration) {
           if (offset || duration) this.noteGrainOn(when || 0, offset, duration);
           else this.noteOn(when || 0);
         };
       } else {
         node.internal_start = node.start;
-        node.start = function(when, offset, duration) {
+        node.start = function (when, offset, duration) {
           if (typeof duration !== 'undefined') node.internal_start(when || 0, offset, duration);
           else node.internal_start(when || 0, offset || 0);
         };
       }
       if (!node.stop) {
-        node.stop = function(when) {
+        node.stop = function (when) {
           this.noteOff(when || 0);
         };
       } else {
         node.internal_stop = node.stop;
-        node.stop = function(when) {
+        node.stop = function (when) {
           node.internal_stop(when || 0);
         };
       }
@@ -118,7 +118,7 @@ BiquadFilterNode.type and OscillatorNode.type.
 
     AudioContext.prototype.internal_createDynamicsCompressor =
       AudioContext.prototype.createDynamicsCompressor;
-    AudioContext.prototype.createDynamicsCompressor = function() {
+    AudioContext.prototype.createDynamicsCompressor = function () {
       var node = this.internal_createDynamicsCompressor();
       fixSetTarget(node.threshold);
       fixSetTarget(node.knee);
@@ -130,7 +130,7 @@ BiquadFilterNode.type and OscillatorNode.type.
     };
 
     AudioContext.prototype.internal_createBiquadFilter = AudioContext.prototype.createBiquadFilter;
-    AudioContext.prototype.createBiquadFilter = function() {
+    AudioContext.prototype.createBiquadFilter = function () {
       var node = this.internal_createBiquadFilter();
       fixSetTarget(node.frequency);
       fixSetTarget(node.detune);
@@ -141,25 +141,25 @@ BiquadFilterNode.type and OscillatorNode.type.
 
     if (AudioContext.prototype.hasOwnProperty('createOscillator')) {
       AudioContext.prototype.internal_createOscillator = AudioContext.prototype.createOscillator;
-      AudioContext.prototype.createOscillator = function() {
+      AudioContext.prototype.createOscillator = function () {
         var node = this.internal_createOscillator();
         if (!node.start) {
-          node.start = function(when) {
+          node.start = function (when) {
             this.noteOn(when || 0);
           };
         } else {
           node.internal_start = node.start;
-          node.start = function(when) {
+          node.start = function (when) {
             node.internal_start(when || 0);
           };
         }
         if (!node.stop) {
-          node.stop = function(when) {
+          node.stop = function (when) {
             this.noteOff(when || 0);
           };
         } else {
           node.internal_stop = node.stop;
-          node.stop = function(when) {
+          node.stop = function (when) {
             node.internal_stop(when || 0);
           };
         }

@@ -164,7 +164,7 @@ export function init(initialState: AppState) {
     } else {
       usingWebAudio = false;
     }
-  } catch (e) {
+  } catch {
     usingWebAudio = false;
   }
 
@@ -187,7 +187,6 @@ export function init(initialState: AppState) {
     if (e.data === 'tick') {
       scheduler();
     } else {
-      // eslint-disable-next-line
       console.log(`message: ${e.data}`);
     }
   };

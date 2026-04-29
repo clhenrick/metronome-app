@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Play, Pause } from './Icons';
 
 interface PlayPauseBtnProps {

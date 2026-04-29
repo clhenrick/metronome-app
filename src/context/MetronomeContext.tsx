@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useReducer } from 'react';
+import { ReactNode, createContext, useContext, useEffect, useReducer } from 'react';
 import { AppState, defaultState } from '../types';
 import { getSavedState, setSavedState } from '../utils/localstorage';
 import {
@@ -69,7 +69,7 @@ interface MetronomeContextValue extends AppState {
 
 const MetronomeContext = createContext<MetronomeContextValue | null>(null);
 
-export function MetronomeProvider({ children }: { children: React.ReactNode }) {
+export function MetronomeProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(reducer, getSavedState());
 
   // Initialize audio engine on mount with saved state values

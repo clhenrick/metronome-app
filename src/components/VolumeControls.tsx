@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { useMetronome } from '../context/MetronomeContext';
 import VolumeSlider from './VolumeSlider';
 

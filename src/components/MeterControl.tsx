@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { ArrowDown, ArrowUp } from './Icons';
 
 interface MeterControlProps {
