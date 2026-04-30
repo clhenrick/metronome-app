@@ -751,6 +751,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource/roboto@npm:^5.2.10":
+  version: 5.2.10
+  resolution: "@fontsource/roboto@npm:5.2.10"
+  checksum: 10c0/abadfcaefbe2196bbd36d9258b336063f721894a3624a9639da00792583c565bfd0748ef978f91a38c3c0de8d247615c9be92a763184c085c630fa43f04b1cd9
+  languageName: node
+  linkType: hard
+
 "@humanfs/core@npm:^0.19.2":
   version: 0.19.2
   resolution: "@humanfs/core@npm:0.19.2"
@@ -3871,6 +3878,7 @@ __metadata:
   resolution: "metronome-app@workspace:."
   dependencies:
     "@eslint/js": "npm:^9.27.0"
+    "@fontsource/roboto": "npm:^5.2.10"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^16.3.0"
