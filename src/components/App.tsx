@@ -11,7 +11,7 @@ import PlayPauseBtn from './PlayPauseBtn';
 import VolumeControls from './VolumeControls';
 
 function App() {
-  const appRef = useRef<HTMLDivElement | null>(null);
+  const appRef = useRef<HTMLElement | null>(null);
   const { isPlaying, meter, setMeter, setTempo, tempo, togglePlayPause } = useMetronome();
 
   useEffect(() => {
@@ -22,7 +22,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App" ref={appRef}>
+    <main className="App" ref={appRef}>
       <div className="top-controls-panel">
         <TempoDisplay tempo={tempo} />
         <PlayPauseBtn isPlaying={isPlaying} handleClick={togglePlayPause} />
@@ -36,7 +36,7 @@ function App() {
         </div>
       </div>
       <VolumeControls />
-    </div>
+    </main>
   );
 }
 

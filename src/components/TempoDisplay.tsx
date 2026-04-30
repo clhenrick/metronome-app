@@ -3,7 +3,7 @@ interface TempoDisplayProps {
 }
 
 const TempoDisplay = ({ tempo }: TempoDisplayProps) => (
-  <div className="TempoDisplay">
+  <div aria-atomic="true" aria-live="polite" className="TempoDisplay">
     <p>
       <span>{tempo}</span> bpm
     </p>

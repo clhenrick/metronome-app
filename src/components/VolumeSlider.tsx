@@ -2,6 +2,7 @@ import { ChangeEvent, Component } from 'react';
 
 interface VolumeSliderProps {
   handleChange: (value: number) => void;
+  id: string;
   title: string;
   volume: number;
 }
@@ -17,11 +18,13 @@ class VolumeSlider extends Component<VolumeSliderProps> {
   }
 
   render() {
-    const { volume, title } = this.props;
+    const { id, volume, title } = this.props;
     return (
       <div className="VolumeSlider">
-        <h6>{title}</h6>
+        <label htmlFor={id}>{title}</label>
         <input
+          aria-valuetext={`${Math.round(volume * 100)}%`}
+          id={id}
           type="range"
           min={0}
           max={100}

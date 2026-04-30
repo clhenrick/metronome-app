@@ -3,7 +3,7 @@ interface MeterDisplayProps {
 }
 
 const MeterDisplay = ({ meter }: MeterDisplayProps) => (
-  <div className="MeterDisplay">
+  <div aria-atomic="true" aria-live="polite" className="MeterDisplay">
     <p>
       {meter} <span>/ 4</span>
     </p>

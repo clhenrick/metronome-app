@@ -21,10 +21,10 @@ const MeterControl = ({ meter, handleChange }: MeterControlProps) => {
 
   return (
     <div className="MeterControl">
-      <button onClick={() => handleClick('increment')}>
+      <button aria-label="Increase meter" onClick={() => handleClick('increment')}>
         <ArrowUp width={50} height={50} fillColor="#f93bcf" />
       </button>
-      <button onClick={() => handleClick('decrement')}>
+      <button aria-label="Decrease meter" onClick={() => handleClick('decrement')}>
         <ArrowDown width={50} height={50} fillColor="#f93bcf" />
       </button>
     </div>

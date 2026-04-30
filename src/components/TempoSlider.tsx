@@ -25,18 +25,25 @@ class TempoSlider extends Component<TempoSliderProps> {
     const { handleChange, tempo } = this.props;
     return (
       <div className="TempoSlider">
-        <h3 className="title">Tempo</h3>
-        <div className="tempo-slider__controls">
-          <button onClick={() => this.handleClick('decrement')}>–</button>
+        <p className="title" id="tempo-label">Tempo</p>
+        <fieldset className="tempo-slider__controls">
+          <legend className="visually-hidden">Tempo controls</legend>
+          <button aria-label="Decrease tempo" onClick={() => this.handleClick('decrement')}>
+            –
+          </button>
           <input
+            aria-labelledby="tempo-label"
+            aria-valuetext={`${tempo} BPM`}
             type="range"
             min={1}
             max={250}
             value={tempo}
             onChange={(e) => handleChange(parseInt(e.target.value, 10))}
           />
-          <button onClick={() => this.handleClick('increment')}>+</button>
-        </div>
+          <button aria-label="Increase tempo" onClick={() => this.handleClick('increment')}>
+            +
+          </button>
+        </fieldset>
       </div>
     );
   }

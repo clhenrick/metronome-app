@@ -11,7 +11,7 @@ export function IconWrapper(
   children: ReactNode,
 ): JSX.Element {
   return (
-    <svg fill={fillColor} height={height} viewBox="0 0 24 24" width={width}>
+    <svg aria-hidden="true" fill={fillColor} height={height} viewBox="0 0 24 24" width={width}>
       {children}
     </svg>
   );

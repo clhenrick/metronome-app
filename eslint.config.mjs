@@ -48,16 +48,10 @@ export default tseslint.config(
     },
   },
 
-  // Accessibility rules — warn in Phase 5, violations fixed in Phase 6
+  // Accessibility rules — full recommended severity (errors)
   {
     files: ['src/**/*.{ts,tsx}'],
     ...jsxA11y.flatConfigs.recommended,
-    rules: Object.fromEntries(
-      Object.entries(jsxA11y.flatConfigs.recommended.rules).map(([rule, _severity]) => [
-        rule,
-        'warn',
-      ])
-    ),
   },
 
   // Vitest globals and rules for test files
