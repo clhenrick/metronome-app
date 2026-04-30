@@ -8,11 +8,7 @@ import prettierConfig from 'eslint-config-prettier';
 
 export default tseslint.config(
   {
-    ignores: [
-      'dist/**',
-      // legacy Web Audio API polyfill — slated for deletion in Phase 7
-      'src/utils/monkeypatch.ts',
-    ],
+    ignores: ['dist/**'],
   },
 
   // Source and test files

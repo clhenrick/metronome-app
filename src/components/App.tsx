@@ -1,7 +1,4 @@
-import { useEffect, useRef } from 'react';
-
 import { useMetronome } from '../context/MetronomeContext';
-import preventDoubleTapZoom from '../utils/helpers';
 
 import MeterControl from './MeterControl';
 import MeterDisplay from './MeterDisplay';
@@ -11,18 +8,10 @@ import PlayPauseBtn from './PlayPauseBtn';
 import VolumeControls from './VolumeControls';
 
 function App() {
-  const appRef = useRef<HTMLElement | null>(null);
   const { isPlaying, meter, setMeter, setTempo, tempo, togglePlayPause } = useMetronome();
 
-  useEffect(() => {
-    const el = appRef.current;
-    if (!el) return;
-    el.addEventListener('touchstart', preventDoubleTapZoom);
-    return () => el.removeEventListener('touchstart', preventDoubleTapZoom);
-  }, []);
-
   return (
-    <main className="App" ref={appRef}>
+    <main className="App">
       <div className="top-controls-panel">
         <TempoDisplay tempo={tempo} />
         <PlayPauseBtn isPlaying={isPlaying} handleClick={togglePlayPause} />

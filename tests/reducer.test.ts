@@ -7,7 +7,7 @@ vi.mock('../src/utils/metronome', () => ({
   setMasterVolume: vi.fn(),
   setAccentVolume: vi.fn(),
   setQuarterVolume: vi.fn(),
-  setEigthVolume: vi.fn(),
+  setEighthVolume: vi.fn(),
   setSixteenthVolume: vi.fn(),
   setTripletVolume: vi.fn(),
 }));

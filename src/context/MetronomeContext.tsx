@@ -9,7 +9,7 @@ import {
   setMasterVolume as setMetronomeMasterVolume,
   setAccentVolume as setMetronomeAccentVolume,
   setQuarterVolume as setMetronomeQuarterVolume,
-  setEigthVolume as setMetronomeEighthVolume,
+  setEighthVolume as setMetronomeEighthVolume,
   setSixteenthVolume as setMetronomeSixteenthVolume,
   setTripletVolume as setMetronomeTripletVolume,
 } from '../utils/metronome';

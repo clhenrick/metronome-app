@@ -55,7 +55,7 @@ export function setQuarterVolume(_: number) {
   quarterVolume = _;
 }
 
-export function setEigthVolume(_: number) {
+export function setEighthVolume(_: number) {
   eighthVolume = _;
 }
 
