@@ -21,8 +21,8 @@ function App() {
           <TempoDisplay tempo={tempo} />
           <PlayPauseBtn isPlaying={isPlaying} handleClick={togglePlayPause} />
         </div>
+        <TempoSlider handleChange={setTempo} tempo={tempo} />
       </section>
-      <TempoSlider handleChange={setTempo} tempo={tempo} />
       <section className="meter-panel">
         <h2 className="title">Meter</h2>
         <div>
