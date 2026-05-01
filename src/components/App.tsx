@@ -12,19 +12,28 @@ function App() {
 
   return (
     <main className="App">
-      <div className="top-controls-panel">
-        <TempoDisplay tempo={tempo} />
-        <PlayPauseBtn isPlaying={isPlaying} handleClick={togglePlayPause} />
-      </div>
+      <h1>Metronome App</h1>
+      <section>
+        <h2 className="title" id="tempo-label">
+          Tempo
+        </h2>
+        <div className="top-controls-panel">
+          <TempoDisplay tempo={tempo} />
+          <PlayPauseBtn isPlaying={isPlaying} handleClick={togglePlayPause} />
+        </div>
+      </section>
       <TempoSlider handleChange={setTempo} tempo={tempo} />
-      <div className="meter-panel">
-        <h3 className="title">Meter</h3>
+      <section className="meter-panel">
+        <h2 className="title">Meter</h2>
         <div>
           <MeterDisplay meter={meter} />
           <MeterControl handleChange={setMeter} meter={meter} />
         </div>
-      </div>
-      <VolumeControls />
+      </section>
+      <section>
+        <h2>Volume</h2>
+        <VolumeControls />
+      </section>
     </main>
   );
 }

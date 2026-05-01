@@ -10,16 +10,13 @@ function TempoSlider({ handleChange, tempo }: TempoSliderProps) {
 
   return (
     <div className="TempoSlider">
-      <p className="title" id="tempo-label">
-        Tempo
-      </p>
       <fieldset className="tempo-slider__controls">
         <legend className="visually-hidden">Tempo controls</legend>
         <button aria-label="Decrease tempo" onClick={() => handleClick('decrement')}>
           –
         </button>
         <input
-          aria-labelledby="tempo-label"
+          aria-label="tempo"
           aria-valuetext={`${tempo} BPM`}
           type="range"
           min={1}

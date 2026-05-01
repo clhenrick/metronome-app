@@ -19,7 +19,7 @@ const VolumeControls = () => {
 
   return (
     <fieldset className="VolumeControls">
-      <legend className="title">Volume</legend>
+      <legend className="visually-hidden">Volume Controls</legend>
       <VolumeSlider
         id="master"
         title="Master"
