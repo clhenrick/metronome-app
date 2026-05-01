@@ -12,6 +12,7 @@
     "preview": "vite preview",
     "deploy": "yarn build",
     "lint": "eslint src tests",
+    "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
