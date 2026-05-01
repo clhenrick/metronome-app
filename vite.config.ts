@@ -1,4 +1,3 @@
-/// <reference types="vitest" />
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'node:path';
@@ -10,8 +9,6 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         loadPaths: [path.resolve(__dirname, 'node_modules')],
-        // skeleton-scss uses legacy Sass APIs; silence until it's replaced
-        silenceDeprecations: ['import', 'global-builtin', 'color-functions', 'slash-div'],
       },
     },
   },
@@ -24,10 +21,5 @@ export default defineConfig({
   },
   server: {
     port: 3000,
-  },
-  test: {
-    environment: 'jsdom',
-    setupFiles: ['./tests/setup.ts'],
-    globals: true,
   },
 });
