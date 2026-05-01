@@ -3894,12 +3894,10 @@ __metadata:
     eslint-plugin-react: "npm:^7.37.5"
     eslint-plugin-react-hooks: "npm:^5.2.0"
     jsdom: "npm:^26.1.0"
-    normalize.css: "npm:^8.0.1"
     prettier: "npm:^3.5.3"
     react: "npm:^18"
     react-dom: "npm:^18"
     sass: "npm:^1.87.0"
-    skeleton-scss: "npm:^2.0.4"
     typescript: "npm:^6.0.3"
     typescript-eslint: "npm:^8.32.1"
     vite: "npm:^6.3.4"
@@ -4036,13 +4034,6 @@ __metadata:
   bin:
     nopt: bin/nopt.js
   checksum: 10c0/1822eb6f9b020ef6f7a7516d7b64a8036e09666ea55ac40416c36e4b2b343122c3cff0e2f085675f53de1d2db99a2a89a60ccea1d120bcd6a5347bf6ceb4a7fd
-  languageName: node
-  linkType: hard
-
-"normalize.css@npm:^8.0.1":
-  version: 8.0.1
-  resolution: "normalize.css@npm:8.0.1"
-  checksum: 10c0/4ddf56d1af5ca755fa5e692e718316d8758ecb792aa96e1ad206824b5810a043763d681d6f7697d46573515f5e9690038b4c91a95c1997567128815545fb8cd7
   languageName: node
   linkType: hard
 
@@ -4752,13 +4743,6 @@ __metadata:
   version: 4.1.0
   resolution: "signal-exit@npm:4.1.0"
   checksum: 10c0/41602dce540e46d599edba9d9860193398d135f7ff72cab629db5171516cfae628d21e7bfccde1bbfdf11c48726bc2a6d1a8fb8701125852fbfda7cf19c6aa83
-  languageName: node
-  linkType: hard
-
-"skeleton-scss@npm:^2.0.4":
-  version: 2.0.4
-  resolution: "skeleton-scss@npm:2.0.4"
-  checksum: 10c0/cf38ad1ed35f945f2ae192278c31ba794ebc2bd044015317ab0e291e674e0180ff1296763ec6cb4eac8b754e81b1e440f7b1d066a463eb678d804d3c83098c1d
   languageName: node
   linkType: hard
 
