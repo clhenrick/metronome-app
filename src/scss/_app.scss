@@ -1,16 +1,16 @@
 .App {
   position: relative;
-  width: calc(100% - 24px);
-  height: calc(100% - 24px);
+  width: calc(100% - $spacing-md * 2);
+  height: calc(100% - $spacing-md * 2);
   overflow-x: hidden;
   padding: 12px;
   background: $white;
   color: $dark-grey;
-  max-width: 640px;
+  max-width: 40em;
   margin: 0 auto;
 
   .meter-panel {
-    padding-bottom: 10px;
+    margin-block-end: $spacing-lg;
   }
 
   .meter-panel > div {

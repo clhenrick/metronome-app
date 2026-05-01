@@ -1,12 +1,10 @@
 .TempoSlider {
-  padding-bottom: 10px;
-
-  .title {
-    margin: 0;
-  }
+  padding-bottom: $spacing-md;
 
   .tempo-slider__controls {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: $spacing-md;
     justify-content: space-between;
     align-items: center;
     border: none;
@@ -14,17 +12,10 @@
     margin: 0;
   }
 
-  input[type='range'] {
-    display: inline-block;
-    width: calc(100% - (38px * 2) - 20px);
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
   button {
-    width: 38px;
-    display: inline-block;
-    padding: 0 8px;
-    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
   }
 }

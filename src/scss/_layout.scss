@@ -27,17 +27,23 @@ button {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  margin: 0;
 }
 
-// skeleton button overrides
+h1, h2, h3, h4, h5, h6 {
+  margin-block-end: 0.6em;
+}
+
 button {
   display: inline-block;
+  min-height: $spacing-button;
+  min-width: $spacing-button;
   margin: 0;
+  padding: $spacing-sm;
   color: $magenta;
   font-size: 2.8rem;
   background-color: $white;
   border: none;
+  cursor: pointer;
 
   &:hover {
     color: $magenta;
@@ -49,7 +55,7 @@ button {
 input[type='range'] {
   -webkit-appearance: none;
   appearance: none;
-  height: 8px;
+  height: $input-range-height;
   width: 100%;
   border: 1px solid $magenta;
   background-color: $white;
@@ -59,8 +65,8 @@ input[type='range'] {
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 16px;
-    height: 16px;
+    width: $input-range-thumb-size;
+    height: $input-range-thumb-size;
     border-radius: 50%;
     border: 2px solid $magenta;
     background-color: $white;
@@ -68,11 +74,18 @@ input[type='range'] {
   }
 
   &::-moz-range-thumb {
-    width: 16px;
-    height: 16px;
+    width: $input-range-thumb-size;
+    height: $input-range-thumb-size;
     border-radius: 50%;
     border: 2px solid $magenta;
     background-color: $white;
     cursor: pointer;
   }
+}
+
+label {
+  display: block;
+  font-size: 1.2rem;
+  margin-block-start: 0.75em;
+  margin-block-end: 0.5em;
 }

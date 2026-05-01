@@ -1,13 +1,4 @@
 .PlayPauseBtn {
-  height: 100px;
-  width: 30%;
-  padding: 0;
-  font-size: 1.8rem;
-  background-color: $white;
-  border: none;
-
-  &:hover {
-    color: $white;
-    background: $white;
-  }
+  height: calc(100px + $spacing-sm * 2);
+  width: calc(100px + $spacing-sm * 2);
 }
