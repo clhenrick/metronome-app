@@ -1,10 +1,9 @@
-@import 'skeleton-scss/scss/skeleton';
-
 @import 'variables';
 @import 'utilities';
+@import 'reset';
 
-@import 'app';
 @import 'layout';
+@import 'app';
 @import 'meter-control';
 @import 'meter-display';
 @import 'play-pause-btn';
