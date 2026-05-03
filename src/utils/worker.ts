@@ -1,4 +1,4 @@
-let timerID = null;
+let timerID: ReturnType<typeof window.setInterval> | undefined;
 let interval = 100;
 
 self.onmessage = (e) => {
@@ -20,6 +20,6 @@ self.onmessage = (e) => {
   } else if (e.data === 'stop') {
     console.log('stopping');
     clearInterval(timerID);
-    timerID = null;
+    timerID = undefined;
   }
 };
