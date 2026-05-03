@@ -1,15 +1,8 @@
-.MeterControl {
-  height: 90px; // matches tempo display height
-  width: 50%;
-  display: inline-block;
+@use 'variables' as *;
 
-  button {
-    height: 50%;
-    width: 70%;
-    display: block;
-    margin: 0 auto;
-    font-size: 1.8rem;
-    background-color: $white;
-    border: none;
-  }
+.MeterControl {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+  margin-inline-end: $spacing-lg;
 }

@@ -1,0 +1,11 @@
+@use 'variables' as *;
+
+.meter-panel {
+  margin-block-end: $spacing-lg;
+}
+
+.meter-panel > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
