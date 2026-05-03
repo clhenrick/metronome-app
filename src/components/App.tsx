@@ -14,9 +14,7 @@ function App() {
     <main className="App">
       <h1>Metronome App</h1>
       <section>
-        <h2 className="title" id="tempo-label">
-          Tempo
-        </h2>
+        <h2 id="tempo-label">Tempo</h2>
         <div className="top-controls-panel">
           <TempoDisplay tempo={tempo} />
           <PlayPauseBtn isPlaying={isPlaying} handleClick={togglePlayPause} />
@@ -24,7 +22,7 @@ function App() {
         <TempoSlider handleChange={setTempo} tempo={tempo} />
       </section>
       <section className="meter-panel">
-        <h2 className="title">Meter</h2>
+        <h2>Meter</h2>
         <div>
           <MeterDisplay meter={meter} />
           <MeterControl handleChange={setMeter} meter={meter} />

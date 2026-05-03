@@ -1,4 +1,8 @@
+@use 'variables' as *;
+
+$size: calc(100px + $spacing-sm * 2);
+
 .PlayPauseBtn {
-  height: calc(100px + $spacing-sm * 2);
-  width: calc(100px + $spacing-sm * 2);
+  height: $size;
+  width: $size;
 }

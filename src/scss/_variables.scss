@@ -1,7 +1,11 @@
+@use 'sass:color';
+
 // UI colors
 $dark-grey: #222;
 $magenta: #f93bcf;
 $white: #fff;
+
+$focus-ring: color.scale($magenta, $lightness: -20%);
 
 $font-size-normal: 1rem;
 $font-size-big: 6rem;

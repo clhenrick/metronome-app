@@ -1,5 +1,8 @@
+@use 'variables' as *;
+
 .MeterControl {
   display: flex;
   flex-direction: column;
+  gap: $spacing-xs;
   margin-inline-end: $spacing-lg;
 }

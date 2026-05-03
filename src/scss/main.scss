@@ -1,14 +1,14 @@
-@import 'variables';
-@import 'utilities';
-@import 'reset';
+@use 'variables';
+@use 'utilities';
+@use 'reset';
 
-@import 'layout';
-@import 'app';
-@import 'meter-control';
-@import 'meter-display';
-@import 'play-pause-btn';
-@import 'tempo-display';
-@import 'tempo-slider';
-@import 'volume-slider';
-@import 'volume-controls';
-@import 'top-controls-panel';
+@use 'layout';
+@use 'app';
+@use 'meter-control';
+@use 'meter-display';
+@use 'meter-panel';
+@use 'play-pause-btn';
+@use 'tempo-display';
+@use 'tempo-slider';
+@use 'volume-slider';
+@use 'top-controls-panel';

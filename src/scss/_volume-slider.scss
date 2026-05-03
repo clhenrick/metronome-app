@@ -1,9 +1,12 @@
+@use 'variables' as *;
+
 .VolumeSlider {
-  width: 100%;
+  &:focus-within {
+    outline: 2px solid $focus-ring;
+    outline-offset: 4px;
+  }
 
-  display: inline-block;
-
-  h6 {
-    text-align: left;
+  input[type='range']:focus-visible {
+    outline: none;
   }
 }

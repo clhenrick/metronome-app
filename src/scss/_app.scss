@@ -1,21 +1,16 @@
+@use 'variables' as *;
+
+$appSize: calc(100% - $spacing-md * 2);
+$appMaxWidth: 40em;
+
 .App {
   position: relative;
-  width: calc(100% - $spacing-md * 2);
-  height: calc(100% - $spacing-md * 2);
+  width: $appSize;
+  height: $appSize;
   overflow-x: hidden;
-  padding: 12px;
+  padding: $spacing-md;
   background: $white;
   color: $dark-grey;
-  max-width: 40em;
+  max-width: $appMaxWidth;
   margin: 0 auto;
-
-  .meter-panel {
-    margin-block-end: $spacing-lg;
-  }
-
-  .meter-panel > div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
 }
