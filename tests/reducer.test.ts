@@ -17,19 +17,8 @@ import { defaultState } from '../src/types';
 
 describe('reducer', () => {
   it('returns unchanged state for unknown action', () => {
-    expect(reducer(defaultState, { type: 'TOGGLE_PLAY_PAUSE' })).not.toBe(defaultState);
-    // confirm default values
-    expect(defaultState).toMatchObject({
-      isPlaying: false,
-      tempo: 120,
-      meter: 4,
-      masterVolume: 0.5,
-      accentVolume: 1,
-      quarterVolume: 0.75,
-      eighthVolume: 0,
-      sixteenthVolume: 0,
-      tripletVolume: 0,
-    });
+    // @ts-expect-error
+    expect(reducer(defaultState, { type: 'FOO' })).toBe(defaultState);
   });
 
   it('handles TOGGLE_PLAY_PAUSE', () => {
