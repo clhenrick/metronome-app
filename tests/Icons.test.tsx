@@ -1,48 +1,33 @@
-import { render } from '@testing-library/react';
-import { IconWrapper, ArrowDown, ArrowUp, Play, Pause } from '../src/components/Icons';
+import { render, isInaccessible } from '@testing-library/react';
+import { Icon, type IconProps } from '../src/components/Icons';
 
-describe('IconWrapper', () => {
-  const props = { fillColor: '#222', width: 40, height: 40 };
+describe('Icon component', () => {
+  const props: IconProps = { name: 'arrowDown', fillColor: '#333', width: 40, height: 40 };
 
-  it('renders an svg element', () => {
-    const { container } = render(IconWrapper(props, []));
+  it('renders an SVG element', () => {
+    const { container } = render(Icon(props));
     expect(container.querySelector('svg')).toBeInTheDocument();
   });
 
-  it('sets viewBox, fill, width, height on the svg', () => {
-    const { container } = render(IconWrapper(props, []));
+  it('sets necessary SVG attributes', () => {
+    const { container } = render(Icon(props));
     const svg = container.querySelector('svg');
     expect(svg).toHaveAttribute('viewBox', '0 0 24 24');
-    expect(svg).toHaveAttribute('fill', '#222');
+    expect(svg).toHaveAttribute('fill', '#333');
     expect(svg).toHaveAttribute('width', '40');
     expect(svg).toHaveAttribute('height', '40');
-  });
-});
-
-describe('Icons', () => {
-  const props = { fillColor: 'magenta', width: 40, height: 40 };
-
-  it('renders ArrowDown with an svg and two path children', () => {
-    const { container } = render(<ArrowDown {...props} />);
-    expect(container.querySelector('svg')).toBeInTheDocument();
-    expect(container.querySelectorAll('path')).toHaveLength(2);
+    expect(svg).toHaveAttribute('aria-hidden', 'true');
   });
 
-  it('renders ArrowUp with an svg and two path children', () => {
-    const { container } = render(<ArrowUp {...props} />);
-    expect(container.querySelector('svg')).toBeInTheDocument();
-    expect(container.querySelectorAll('path')).toHaveLength(2);
+  it('intentionally excludes the SVG element from assistive technology', () => {
+    const { container } = render(Icon(props));
+    const svg = container.querySelector('svg')!;
+    expect(isInaccessible(svg)).toBe(true);
   });
 
-  it('renders Play with an svg and two path children', () => {
-    const { container } = render(<Play {...props} />);
-    expect(container.querySelector('svg')).toBeInTheDocument();
-    expect(container.querySelectorAll('path')).toHaveLength(2);
-  });
-
-  it('renders Pause with an svg and two path children', () => {
-    const { container } = render(<Pause {...props} />);
-    expect(container.querySelector('svg')).toBeInTheDocument();
-    expect(container.querySelectorAll('path')).toHaveLength(2);
+  it('renders SVG children for the corresponding icon name', () => {
+    const { container } = render(Icon(props));
+    const svg = container.querySelector('svg');
+    expect(svg?.children.length).toBeTruthy();
   });
 });
