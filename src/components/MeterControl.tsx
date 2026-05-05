@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowUp } from './Icons';
+import { Icon } from './Icons';
 
 interface MeterControlProps {
   handleChange: (value: number) => void;
@@ -22,10 +22,10 @@ const MeterControl = ({ meter, handleChange }: MeterControlProps) => {
   return (
     <div className="MeterControl">
       <button aria-label="Increase meter" onClick={() => handleClick('increment')}>
-        <ArrowUp width={50} height={50} fillColor="#f93bcf" />
+        <Icon name="arrowUp" width={50} height={50} fillColor="#f93bcf" />
       </button>
       <button aria-label="Decrease meter" onClick={() => handleClick('decrement')}>
-        <ArrowDown width={50} height={50} fillColor="#f93bcf" />
+        <Icon name="arrowDown" width={50} height={50} fillColor="#f93bcf" />
       </button>
     </div>
   );
