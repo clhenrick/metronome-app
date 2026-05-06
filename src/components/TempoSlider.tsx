@@ -1,3 +1,5 @@
+import InputRange from "./InputRange";
+
 interface TempoSliderProps {
   handleChange: (value: number) => void;
   tempo: number;
@@ -15,10 +17,9 @@ function TempoSlider({ handleChange, tempo }: TempoSliderProps) {
         <button aria-label="Decrease tempo" onClick={() => handleClick('decrement')}>
           –
         </button>
-        <input
+        <InputRange
           aria-label="tempo"
           aria-valuetext={`${tempo} BPM`}
-          type="range"
           min={1}
           max={250}
           value={tempo}
