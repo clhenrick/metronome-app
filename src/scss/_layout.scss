@@ -14,10 +14,20 @@ body,
 
 body {
   font-family: 'Roboto', sans-serif;
+  font-weight: 300;
   color: light-dark($color-dark-grey, $color-white);
   background: light-dark($color-white, $color-bg-dark);
   min-height: 100vh;
   min-height: 100dvh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
 }
 
 // prevent selection of text on all text elements
