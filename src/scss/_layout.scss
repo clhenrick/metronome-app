@@ -51,7 +51,7 @@ h6 {
 button,
 input[type='range'] {
   &:focus-visible {
-    outline: 2px solid $focus-ring;
+    outline: $outline-style;
   }
 }
 
@@ -61,7 +61,7 @@ button {
   min-width: $spacing-button;
   margin: 0;
   padding: $spacing-sm;
-  color: $color-magenta;
+  color: $color-accent;
   font-size: 2.8rem;
   background-color: light-dark($color-white, $color-dark-grey);
   border: none;
@@ -74,8 +74,8 @@ input[type='range'] {
   appearance: none;
   height: $input-range-height;
   width: 100%;
-  border: 1px solid $color-magenta;
-  background: linear-gradient(to right, $color-magenta var(--range-pct, 0%), $color-white var(--range-pct, 0%));
+  border: 1px solid $color-accent;
+  background: linear-gradient(to right, $color-accent var(--range-pct, 0%), $color-white var(--range-pct, 0%));
   border-radius: 0;
   cursor: pointer;
 
@@ -86,7 +86,7 @@ input[type='range'] {
     height: $input-range-thumb-size;
     border-radius: 50%;
     border: 2px solid $color-white;
-    background-color: $color-magenta;
+    background-color: $color-accent;
     cursor: pointer;
   }
 
@@ -95,7 +95,7 @@ input[type='range'] {
     height: $input-range-thumb-size;
     border-radius: 50%;
     border: 2px solid $color-white;
-    background-color: $color-magenta;
+    background-color: $color-accent;
     cursor: pointer;
   }
 

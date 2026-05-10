@@ -5,8 +5,11 @@ $color-bg-dark: #1e2028;
 $color-dark-grey: #222;
 $color-magenta: #f93bcf;
 $color-white: #fff;
+$color-accent: $color-magenta;
 
-$focus-ring: color.scale($color-magenta, $lightness: -20%);
+$color-focus-ring: $color-magenta;
+
+$outline-style: 2px solid $color-focus-ring;
 
 $font-size-normal: 1rem;
 $font-size-big: 6rem;
