@@ -21,13 +21,19 @@ function InputRange(props: Props) {
 
   useEffect(() => {
     const slider = sliderRef.current;
+
+    function onInput(event: Event) {
+      updateRangePct(event.target as HTMLInputElement);
+    }
+
     if (slider) {
-      slider.addEventListener('input', (event) => updateRangePct(event.target as HTMLInputElement));
+      slider.addEventListener('input', onInput);
       updateRangePct(slider);
     }
+
     return () => {
       if (slider) {
-        slider.removeEventListener('input', (event) => updateRangePct(event.target as HTMLInputElement));
+        slider.removeEventListener('input', onInput);
       }
     }
   }, []);
