@@ -2,7 +2,7 @@
 
 .VolumeSlider {
   &:focus-within {
-    outline: 2px solid $focus-ring;
+    outline: $outline-style;
     outline-offset: 4px;
   }
 

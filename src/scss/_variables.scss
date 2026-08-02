@@ -1,11 +1,16 @@
 @use 'sass:color';
 
 // UI colors
-$dark-grey: #222;
-$magenta: #f93bcf;
-$white: #fff;
+$color-bg-dark: #1e2028;
+$color-dark-grey: #222;
+$color-light-grey: #eee;
+$color-magenta: #f93bcf;
+$color-white: #fff;
+$color-accent: $color-magenta;
 
-$focus-ring: color.scale($magenta, $lightness: -20%);
+$color-focus-ring: $color-magenta;
+
+$outline-style: 2px solid $color-focus-ring;
 
 $font-size-normal: 1rem;
 $font-size-big: 6rem;
@@ -23,5 +28,5 @@ $spacing-xl: 24px;
 
 $spacing-button: calc($spacing-lg * 2);
 
-$input-range-height: 12px;
+$input-range-height: 8px;
 $input-range-thumb-size: 24px;

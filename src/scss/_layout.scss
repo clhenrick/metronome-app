@@ -1,5 +1,9 @@
 @use 'variables' as *;
 
+:root {
+  color-scheme: light dark;
+}
+
 html,
 body,
 #root {
@@ -10,6 +14,20 @@ body,
 
 body {
   font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: light-dark($color-dark-grey, $color-light-grey);
+  background: light-dark($color-white, $color-bg-dark);
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
 }
 
 // prevent selection of text on all text elements
@@ -43,7 +61,7 @@ h6 {
 button,
 input[type='range'] {
   &:focus-visible {
-    outline: 2px solid $focus-ring;
+    outline: $outline-style;
   }
 }
 
@@ -53,16 +71,11 @@ button {
   min-width: $spacing-button;
   margin: 0;
   padding: $spacing-sm;
-  color: $magenta;
+  color: $color-accent;
   font-size: 2.8rem;
-  background-color: $white;
+  background-color: light-dark($color-light-grey, $color-bg-dark);
   border: none;
   cursor: pointer;
-
-  &:hover {
-    color: $magenta;
-    background: $white;
-  }
 }
 
 // native range input styles
@@ -71,8 +84,8 @@ input[type='range'] {
   appearance: none;
   height: $input-range-height;
   width: 100%;
-  border: 1px solid $magenta;
-  background-color: $white;
+  border: 1px solid $color-accent;
+  background: linear-gradient(to right, $color-accent var(--range-pct, 0%), $color-light-grey var(--range-pct, 0%));
   border-radius: 0;
   cursor: pointer;
 
@@ -82,8 +95,8 @@ input[type='range'] {
     width: $input-range-thumb-size;
     height: $input-range-thumb-size;
     border-radius: 50%;
-    border: 2px solid $magenta;
-    background-color: $white;
+    border: 2px solid $color-light-grey;
+    background-color: $color-accent;
     cursor: pointer;
   }
 
@@ -91,8 +104,8 @@ input[type='range'] {
     width: $input-range-thumb-size;
     height: $input-range-thumb-size;
     border-radius: 50%;
-    border: 2px solid $magenta;
-    background-color: $white;
+    border: 2px solid $color-light-grey;
+    background-color: $color-accent;
     cursor: pointer;
   }
 

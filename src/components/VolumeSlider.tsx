@@ -1,3 +1,5 @@
+import InputRange from "./InputRange";
+
 interface VolumeSliderProps {
   handleChange: (value: number) => void;
   id: string;
@@ -9,10 +11,9 @@ function VolumeSlider({ handleChange, id, title, volume }: VolumeSliderProps) {
   return (
     <div className="VolumeSlider">
       <label htmlFor={id}>{title}</label>
-      <input
+      <InputRange
         aria-valuetext={`${Math.round(volume * 100)}%`}
         id={id}
-        type="range"
         min={0}
         max={100}
         step={1}
