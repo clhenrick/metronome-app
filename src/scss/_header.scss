@@ -1,0 +1,13 @@
+@use 'variables' as *;
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-md $spacing-lg;
+
+  h1 {
+    margin: 0;
+  }
+}

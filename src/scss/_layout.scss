@@ -4,6 +4,14 @@
   color-scheme: light dark;
 }
 
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
 html,
 body,
 #root {
@@ -16,7 +24,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   color: light-dark($color-dark-grey, $color-light-grey);
-  background: light-dark($color-white, $color-bg-dark);
+  background: light-dark($color-light-grey, $color-bg-dark);
   min-height: 100vh;
   min-height: 100dvh;
 }
