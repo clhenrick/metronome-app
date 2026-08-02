@@ -16,6 +16,7 @@ export const ThemeToggle = () => {
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
   }, [theme]);
 
   function toggleTheme() {
@@ -23,7 +24,7 @@ export const ThemeToggle = () => {
   }
 
   const icon = isDarkTheme ? '🌞' : '🌙';
-  const visuallyHiddenText = "Toggle dark theme";
+  const visuallyHiddenText = 'Toggle dark theme';
 
   return (
     <button className="theme-toggle" onClick={toggleTheme} aria-pressed={isDarkTheme}>
