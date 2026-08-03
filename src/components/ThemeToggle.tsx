@@ -3,10 +3,10 @@ import { useState, useEffect } from 'react';
 export type Theme = 'dark' | 'light';
 
 function getDefaultTheme(): Theme {
-  return (
-    (localStorage.getItem('theme') as Theme | undefined) ??
-    ((window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') as Theme)
-  );
+  const localStorageValue = localStorage.getItem('theme') as Theme | undefined;
+  const matchMedia = typeof window?.matchMedia !== 'undefined';
+  const userPreferenceValue = matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  return localStorageValue ?? userPreferenceValue;
 }
 
 /** component handles toggling dark / light UI theme */
