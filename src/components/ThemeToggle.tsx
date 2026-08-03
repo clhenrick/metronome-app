@@ -4,7 +4,7 @@ export type Theme = 'dark' | 'light';
 
 function getDefaultTheme(): Theme {
   return (
-    (localStorage.getItem('theme') as Theme | undefined) ||
+    (localStorage.getItem('theme') as Theme | undefined) ??
     ((window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') as Theme)
   );
 }
@@ -20,10 +20,10 @@ export const ThemeToggle = () => {
   }, [theme]);
 
   function toggleTheme() {
-    setTheme(isDarkTheme ? 'light' : 'dark');
+    setTheme((prev) => prev === "dark" ? 'light' : 'dark');
   }
 
-  const icon = isDarkTheme ? '🌞' : '🌙';
+  const icon = isDarkTheme ? '☀️' : '🌙';
   const visuallyHiddenText = 'Toggle dark theme';
 
   return (
