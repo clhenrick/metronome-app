@@ -6,14 +6,22 @@
   flex-wrap: wrap;
   gap: $spacing-md $spacing-lg;
   position: relative;
-  width: 100vw;
+  width: 100%;
   overflow-x: hidden;
   padding: $spacing-md;
   margin: 0 auto;
+
+  > section {
+    width: calc(50% - $spacing-lg * 2);
+  }
 }
 
 @media screen and (width <= 768px) {
   .App {
     flex-wrap: nowrap;
+
+    > section {
+      width: 100%;
+    }
   }
 }

@@ -23,6 +23,8 @@ body,
 #root {
   display: grid;
   grid-template-rows: auto 1fr auto;
+  max-width: $app-max-width;
+  margin: 0 auto;
 }
 
 body {
