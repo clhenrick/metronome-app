@@ -4,6 +4,14 @@
   color-scheme: light dark;
 }
 
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
 html,
 body,
 #root {
@@ -12,11 +20,18 @@ body,
   position: relative;
 }
 
+#root {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  max-width: $app-max-width;
+  margin: 0 auto;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   color: light-dark($color-dark-grey, $color-light-grey);
-  background: light-dark($color-white, $color-bg-dark);
+  background: light-dark($color-light-grey, $color-bg-dark);
   min-height: 100vh;
   min-height: 100dvh;
 }
@@ -56,6 +71,11 @@ h4,
 h5,
 h6 {
   margin-block-end: 0.6em;
+}
+
+a[href] {
+  color: light-dark($color-magenta-dark, $color-magenta);
+  text-underline-offset: 0.25em;
 }
 
 button,

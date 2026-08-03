@@ -1,0 +1,12 @@
+@use 'variables' as *;
+
+$button-size: 44px;
+
+button.theme-toggle {
+  width: $button-size;
+  height: $button-size;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}

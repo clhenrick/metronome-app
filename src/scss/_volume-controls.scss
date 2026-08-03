@@ -1,0 +1,8 @@
+@use 'variables' as *;
+
+.VolumeControls {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  padding-block-end: $spacing-md;
+}

@@ -1,14 +1,27 @@
 @use 'variables' as *;
 
-$appSize: calc(100% - $spacing-md * 2);
-$appMaxWidth: 40em;
-
 .App {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: $spacing-md $spacing-lg;
   position: relative;
-  width: $appSize;
-  height: $appSize;
+  width: 100%;
   overflow-x: hidden;
   padding: $spacing-md;
-  max-width: $appMaxWidth;
   margin: 0 auto;
+
+  > section {
+    width: calc(50% - $spacing-lg * 2);
+  }
+}
+
+@media screen and (width <= 768px) {
+  .App {
+    flex-wrap: nowrap;
+
+    > section {
+      width: 100%;
+    }
+  }
 }

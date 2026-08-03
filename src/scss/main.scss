@@ -4,6 +4,8 @@
 
 @use 'layout';
 @use 'app';
+@use 'header';
+@use 'theme-toggle';
 @use 'meter-control';
 @use 'meter-display';
 @use 'meter-panel';
@@ -11,4 +13,6 @@
 @use 'tempo-display';
 @use 'tempo-slider';
 @use 'volume-slider';
+@use 'volume-controls';
 @use 'top-controls-panel';
+@use 'footer';
