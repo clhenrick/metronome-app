@@ -6,6 +6,7 @@ import TempoSlider from './TempoSlider';
 import PlayPauseBtn from './PlayPauseBtn';
 import VolumeControls from './VolumeControls';
 import { ThemeToggle } from './ThemeToggle';
+import { Footer } from './Footer';
 
 function App() {
   const { isPlaying, meter, setMeter, setTempo, tempo, togglePlayPause } = useMetronome();
@@ -37,6 +38,7 @@ function App() {
           <VolumeControls />
         </section>
       </main>
+      <Footer />
     </>
   );
 }

@@ -22,7 +22,7 @@ body,
 
 #root {
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto 1fr auto;
 }
 
 body {
@@ -69,6 +69,11 @@ h4,
 h5,
 h6 {
   margin-block-end: 0.6em;
+}
+
+a[href] {
+  color: light-dark($color-magenta-dark, $color-magenta);
+  text-underline-offset: 0.25em;
 }
 
 button,
